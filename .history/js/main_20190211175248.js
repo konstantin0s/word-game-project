@@ -88,7 +88,6 @@
          if(flag == false) {
           // alert("Game Over");
           lives--;
-          freshLives.innerHTML = lives;
           console.log(lives)
           // score--;
           // addScore.textContent = score;
@@ -99,7 +98,6 @@
         addScore.textContent = "0"
         resetInput();
         lives = 3;
-        freshLives.innerHTML = lives;
       }
      }
     

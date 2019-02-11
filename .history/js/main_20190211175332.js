@@ -99,7 +99,6 @@
         addScore.textContent = "0"
         resetInput();
         lives = 3;
-        freshLives.innerHTML = lives;
       }
      }
     
