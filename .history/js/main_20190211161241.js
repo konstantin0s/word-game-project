@@ -45,7 +45,6 @@
      ];
 
   var randomDiv = document.getElementById("wordsDisplay");
-  var addScore = document.getElementById("score");
   var randomIndex;
   var newText;
   var score = 0;
@@ -70,25 +69,20 @@
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
-           console.log(score);
-           addScore.textContent = score;
-           console.log(addScore);
 
            setInterval(function(){
             wordName.style.backgroundColor = "";
-          }, 1500);
+          }, 1000);
           resetInput();
              flag = true;
          } else {
            wordName.style.backgroundColor = "";
          }
-         if(flag == false) {
-          alert("Game Over");
-          score = 0;
-          resetInput();
-      }
-     }
-    
+    //  }
+     // if(flag == false) {
+     //     alert("Game Over");
+     // }
+ }
 
  function resetInput() {
   document.getElementById("inputWord").value = "";

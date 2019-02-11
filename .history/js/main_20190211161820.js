@@ -70,9 +70,6 @@
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
-           console.log(score);
-           addScore.textContent = score;
-           console.log(addScore);
 
            setInterval(function(){
             wordName.style.backgroundColor = "";
@@ -84,8 +81,6 @@
          }
          if(flag == false) {
           alert("Game Over");
-          score = 0;
-          resetInput();
       }
      }
     

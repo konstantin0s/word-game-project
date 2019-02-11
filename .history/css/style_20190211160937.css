@@ -94,10 +94,9 @@ font {
 #wordsDisplay {
   position: relative;
   top: 20px;
-  left: 405px;
+  left: 455px;
   color: white;
   font-family: 'Courier New', Courier, monospace;
   font-size: 30px;
-  width: 300px;
-  text-align: center;
+  width: 200px;
 }

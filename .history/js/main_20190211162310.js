@@ -85,7 +85,6 @@
          if(flag == false) {
           alert("Game Over");
           score = 0;
-          resetInput();
       }
      }
     

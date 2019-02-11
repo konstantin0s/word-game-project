@@ -78,14 +78,13 @@
             wordName.style.backgroundColor = "";
           }, 1500);
           resetInput();
+          score = 0;
              flag = true;
          } else {
            wordName.style.backgroundColor = "";
          }
          if(flag == false) {
           alert("Game Over");
-          score = 0;
-          resetInput();
       }
      }
     

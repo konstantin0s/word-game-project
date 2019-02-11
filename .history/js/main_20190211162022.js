@@ -71,9 +71,7 @@
            wordName.style.backgroundColor = "yellow";
            score++;
            console.log(score);
-           addScore.textContent = score;
-           console.log(addScore);
-
+           addScore.innerHTML = score;
            setInterval(function(){
             wordName.style.backgroundColor = "";
           }, 1500);
@@ -84,8 +82,6 @@
          }
          if(flag == false) {
           alert("Game Over");
-          score = 0;
-          resetInput();
       }
      }
     
