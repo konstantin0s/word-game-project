@@ -44,9 +44,7 @@ function wordGeneratorLevel1() {
 //   wordGeneratorLevel2();
 // }
   var wordsLevel1 = [
-    "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
-"curl", "rate", "busy", "unusual", "extend", "exclusive", "ray", "shy", "wasteful", "unbecoming", "fallacious",
-"toothbrush", "bounce"
+    "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project"
      ];
 
      var wordsLevel2 = [
@@ -66,7 +64,7 @@ function wordGeneratorLevel1() {
   var lives = 3;
   var seconds = 5;
 
-var timer = function() {
+function timer() {
   setInterval(function(){
     seconds--;
     timeLeft.innerHTML = seconds;
@@ -74,6 +72,7 @@ var timer = function() {
       seconds = 5;
       timeLeft.innerHTML = seconds;
     }
+   console.log(seconds);
 }, 1000);
 }
 
@@ -90,17 +89,25 @@ var timer = function() {
    }
  
   
+
+// console.log(newText)
   function compareGuess() {
     var flag = false;
     var searchWord = document.getElementById("inputWord").value;
+    // console.log(searchWord);
     var wordName = document.getElementById("wordsDisplay");
-
+    // console.log(wordName);
+     
+    //  for (var i = 0; i < wordName.length; i++) {
+      //  console.log(wordName);
          if (searchWord == wordName.innerHTML) {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
+          //  console.log(score);
            addScore.textContent = score;
-           clearInterval(timer);
+          //  console.log(addScore);
+
            setInterval(function(){
             wordName.style.backgroundColor = "";
           }, 1500);
@@ -111,8 +118,12 @@ var timer = function() {
          }
           
          if(flag == false) {
+          // alert("Game Over");
           lives--;
           freshLives.innerHTML = lives;
+          console.log(lives)
+          // score--;
+          // addScore.textContent = score;
           resetInput();
       } if (lives == 0) {
         alert("Game Over");
@@ -123,22 +134,17 @@ var timer = function() {
         freshLives.innerHTML = lives;
       }
      }
-  
+    
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
   }
 
 
-  function init() {
-wordGeneratorLevel1();
-   }
+//   function init() {
+
+//    }
    
 
- window.onload = init;
- 
+//  window.onload = init;
 
- //level 2?
-//  if (score > 10) {
-//   wordGeneratorLevel2();
-//   }

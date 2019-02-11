@@ -66,7 +66,7 @@ function wordGeneratorLevel1() {
   var lives = 3;
   var seconds = 5;
 
-var timer = function() {
+function timer() {
   setInterval(function(){
     seconds--;
     timeLeft.innerHTML = seconds;
@@ -99,9 +99,9 @@ var timer = function() {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
+
            addScore.textContent = score;
-           clearInterval(timer);
-           setInterval(function(){
+        var clearBackground = setInterval(function(){
             wordName.style.backgroundColor = "";
           }, 1500);
           resetInput();

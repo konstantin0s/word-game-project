@@ -44,9 +44,7 @@ function wordGeneratorLevel1() {
 //   wordGeneratorLevel2();
 // }
   var wordsLevel1 = [
-    "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
-"curl", "rate", "busy", "unusual", "extend", "exclusive", "ray", "shy", "wasteful", "unbecoming", "fallacious",
-"toothbrush", "bounce"
+    "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project"
      ];
 
      var wordsLevel2 = [
@@ -66,7 +64,7 @@ function wordGeneratorLevel1() {
   var lives = 3;
   var seconds = 5;
 
-var timer = function() {
+function timer() {
   setInterval(function(){
     seconds--;
     timeLeft.innerHTML = seconds;
@@ -99,11 +97,16 @@ var timer = function() {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
+
            addScore.textContent = score;
-           clearInterval(timer);
+
            setInterval(function(){
             wordName.style.backgroundColor = "";
           }, 1500);
+
+            if (score > 10) {
+             wordGeneratorLevel2();
+             }
           resetInput();
              flag = true;
          } else {
@@ -136,9 +139,4 @@ wordGeneratorLevel1();
    
 
  window.onload = init;
- 
 
- //level 2?
-//  if (score > 10) {
-//   wordGeneratorLevel2();
-//   }

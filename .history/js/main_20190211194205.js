@@ -77,6 +77,10 @@ var timer = function() {
 }, 1000);
 }
 
+if (score > 1) {
+  clearInterval(timer);
+}
+
   function generate() {
    randomIndex = Math.ceil((Math.random() * wordsLevel1.length - 1));
    newText = wordsLevel1[randomIndex];
@@ -100,7 +104,6 @@ var timer = function() {
            wordName.style.backgroundColor = "yellow";
            score++;
            addScore.textContent = score;
-           clearInterval(timer);
            setInterval(function(){
             wordName.style.backgroundColor = "";
           }, 1500);

@@ -25,36 +25,30 @@
   // }
 
  
+  function init() {
+    wordGenerator();
+  
+    // if (wordGenerator) {
+    //    timer();
+    // } 
+ 
+ }
+ 
+ window.onload = init;
 
-function wordGeneratorLevel1() {
+function wordGenerator() {
   setInterval(function(){
     generate();
   }, 5000);
   timer();
 }
 
-  function wordGeneratorLevel2() {
-    setInterval(function(){
-      generateLevel2() 
-    }, 5000);
-    timer();
-}
-
-// if (score == 10) {
-//   wordGeneratorLevel2();
-// }
   var wordsLevel1 = [
-    "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
-"curl", "rate", "busy", "unusual", "extend", "exclusive", "ray", "shy", "wasteful", "unbecoming", "fallacious",
-"toothbrush", "bounce"
+    "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "jackhammer",
+   "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer",
+   "pluperfect", "jellygraph", "quickthorn", "rottweiler", "technician", "cowpuncher", "middlebrow",
+   "jackhammer", "triphthong", "wunderkind", "dazzlement", "jabberwock", "witchcraft","pawnbroker", "thumbprint", "motorcycle"
      ];
-
-     var wordsLevel2 = [
-      "jackhammer",
-     "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer",
-     "pluperfect", "jellygraph", "quickthorn", "rottweiler", "technician", "cowpuncher", "middlebrow",
-     "jackhammer", "triphthong", "wunderkind", "dazzlement", "jabberwock", "witchcraft","pawnbroker", "thumbprint", "motorcycle"
-       ];
 
   var randomDiv = document.getElementById("wordsDisplay");
   var addScore = document.getElementById("score");
@@ -66,7 +60,7 @@ function wordGeneratorLevel1() {
   var lives = 3;
   var seconds = 5;
 
-var timer = function() {
+function timer() {
   setInterval(function(){
     seconds--;
     timeLeft.innerHTML = seconds;
@@ -74,6 +68,7 @@ var timer = function() {
       seconds = 5;
       timeLeft.innerHTML = seconds;
     }
+   console.log(seconds);
 }, 1000);
 }
 
@@ -83,24 +78,24 @@ var timer = function() {
    randomDiv.innerHTML = newText;
   }
 
-  function generateLevel2() {
-    randomIndex = Math.ceil((Math.random() * wordsLevel2.length - 1));
-    newText = wordsLevel2[randomIndex];
-    randomDiv.innerHTML = newText;
-   }
- 
-  
+// console.log(newText)
   function compareGuess() {
     var flag = false;
     var searchWord = document.getElementById("inputWord").value;
+    // console.log(searchWord);
     var wordName = document.getElementById("wordsDisplay");
-
+    // console.log(wordName);
+     
+    //  for (var i = 0; i < wordName.length; i++) {
+      //  console.log(wordName);
          if (searchWord == wordName.innerHTML) {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
+          //  console.log(score);
            addScore.textContent = score;
-           clearInterval(timer);
+          //  console.log(addScore);
+
            setInterval(function(){
             wordName.style.backgroundColor = "";
           }, 1500);
@@ -111,8 +106,12 @@ var timer = function() {
          }
           
          if(flag == false) {
+          // alert("Game Over");
           lives--;
           freshLives.innerHTML = lives;
+          console.log(lives)
+          // score--;
+          // addScore.textContent = score;
           resetInput();
       } if (lives == 0) {
         alert("Game Over");
@@ -123,22 +122,8 @@ var timer = function() {
         freshLives.innerHTML = lives;
       }
      }
-  
+    
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
   }
-
-
-  function init() {
-wordGeneratorLevel1();
-   }
-   
-
- window.onload = init;
- 
-
- //level 2?
-//  if (score > 10) {
-//   wordGeneratorLevel2();
-//   }
