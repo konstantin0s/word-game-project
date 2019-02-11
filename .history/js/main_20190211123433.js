@@ -29,13 +29,6 @@
 
   //   }, 5000);
  
-  function init() {
-    setInterval(function(){
-      generate();
-    }, 5000);
- }
- 
- window.onload = init;
 
   var words = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "jackhammer",
@@ -45,51 +38,35 @@
      ];
 
   var randomDiv = document.getElementById("wordsDisplay");
-  var randomIndex;
-  var newText;
-  var score = 0;
 
   function generate() {
-   randomIndex = Math.ceil((Math.random() * words.length - 1));
-   newText = words[randomIndex];
-   randomDiv.innerHTML = newText;
+    randomIndex = Math.ceil((Math.random() * words.length - 1));
+    newText = words[randomIndex];
+    randomDiv.innerHTML = newText;
   }
 
-// console.log(newText)
-  function compareGuess() {
-    var flag = false;
-    var searchWord = document.getElementById("inputWord").value;
-    console.log(searchWord);
-    var wordName = document.getElementById("wordsDisplay");
-    // console.log(wordName);
-     
-    //  for (var i = 0; i < wordName.length; i++) {
-       console.log(wordName);
-         if (searchWord == wordName.innerHTML) {
-           wordName.style.backgroundColor = "yellow";
-           score++;
-           setInterval(function(){
-            wordName.style.backgroundColor = "";
-          }, 1000);
-             flag = true;
-         } else {
-           wordName.style.backgroundColor = "";
-         }
-    //  }
-     // if(flag == false) {
-     //     alert("Game Over");
-     // }
- }
 
-//  compareGuess();
-
-    // setInterval(function(){
-    //   generate();
-    // }, 10000);
+    setInterval(function(){
+      generate();
+    }, 4000);
 
 
-    // var randomDiv = document.getElementById("wordsDisplay");
-    // var wordName = randomDiv.getElementsByTagName("p");
-// var wordName;
-// var searchWord;
     //search for match
+    function search() {
+      var flag = false;
+      wordName = document.getElementById("addWord").value;
+      console.log(wordName);
+       seWords = document.getElementById("wordsDisplay");
+       console.log(seWords);
+      for (var i = 0; i < seWords.length; i++) {
+          if (wordName === seWords[i].innerHTML) {
+            seWords[i].style.backgroundColor = "yellow";
+              flag = true;
+          } else {
+            seWords[i].style.backgroundColor = "white";
+          }
+      }
+      if(flag == false) {
+          alert("Game Over");
+      }
+  }

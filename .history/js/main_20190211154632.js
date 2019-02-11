@@ -47,7 +47,6 @@
   var randomDiv = document.getElementById("wordsDisplay");
   var randomIndex;
   var newText;
-  var score = 0;
 
   function generate() {
    randomIndex = Math.ceil((Math.random() * words.length - 1));
@@ -67,10 +66,9 @@
        console.log(wordName);
          if (searchWord == wordName.innerHTML) {
            wordName.style.backgroundColor = "yellow";
-           score++;
            setInterval(function(){
             wordName.style.backgroundColor = "";
-          }, 1000);
+          }, 5000);
              flag = true;
          } else {
            wordName.style.backgroundColor = "";

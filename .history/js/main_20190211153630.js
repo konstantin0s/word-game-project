@@ -33,6 +33,29 @@
     setInterval(function(){
       generate();
     }, 5000);
+
+    function compareGuess() {
+      var flag = false;
+      var searchWord = document.getElementById("addWord").value;
+      // console.log(searchWord);
+    var wordName = document.getElementById("wordsDisplay");
+      console.log(wordName);
+       
+       for (var i = 0; i < wordName.length; i++) {
+         console.log(wordName[i]);
+           if (searchWord === wordName[i].innerHTML) {
+             wordName[i].style.backgroundColor = "yellow";
+               flag = true;
+           } else {
+             wordName[i].style.backgroundColor = "";
+           }
+       }
+       // if(flag == false) {
+       //     alert("Game Over");
+       // }
+   }
+ 
+   search();
  }
  
  window.onload = init;
@@ -45,43 +68,13 @@
      ];
 
   var randomDiv = document.getElementById("wordsDisplay");
-  var randomIndex;
-  var newText;
-  var score = 0;
 
   function generate() {
-   randomIndex = Math.ceil((Math.random() * words.length - 1));
-   newText = words[randomIndex];
-   randomDiv.innerHTML = newText;
+    randomIndex = Math.ceil((Math.random() * words.length - 1));
+    newText = words[randomIndex];
+    randomDiv.innerHTML = newText;
   }
 
-// console.log(newText)
-  function compareGuess() {
-    var flag = false;
-    var searchWord = document.getElementById("inputWord").value;
-    console.log(searchWord);
-    var wordName = document.getElementById("wordsDisplay");
-    // console.log(wordName);
-     
-    //  for (var i = 0; i < wordName.length; i++) {
-       console.log(wordName);
-         if (searchWord == wordName.innerHTML) {
-           wordName.style.backgroundColor = "yellow";
-           score++;
-           setInterval(function(){
-            wordName.style.backgroundColor = "";
-          }, 1000);
-             flag = true;
-         } else {
-           wordName.style.backgroundColor = "";
-         }
-    //  }
-     // if(flag == false) {
-     //     alert("Game Over");
-     // }
- }
-
-//  compareGuess();
 
     // setInterval(function(){
     //   generate();

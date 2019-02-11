@@ -67,7 +67,6 @@
        console.log(wordName);
          if (searchWord == wordName.innerHTML) {
            wordName.style.backgroundColor = "yellow";
-           score++;
            setInterval(function(){
             wordName.style.backgroundColor = "";
           }, 1000);
