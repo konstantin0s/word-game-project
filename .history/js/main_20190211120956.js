@@ -37,8 +37,7 @@
    "jackhammer", "triphthong", "wunderkind", "dazzlement", "jabberwock", "witchcraft","pawnbroker", "thumbprint", "motorcycle"
      ];
 
-  var randomDiv = document.getElementById("wordsDisplay");
-  // document.getElementById('wordsDisplay').innerHTML = words[randomNum];
+  var randomDiv = document.getElementById("myRandomDiv");
 
   // document.getElementById("myButton").addEventListener("click", generate);
 
@@ -48,8 +47,4 @@
     randomDiv.innerHTML = newText;
   }
 
-
-    setInterval(function(){
-      generate();
-    }, 4000);
-
+  generate();

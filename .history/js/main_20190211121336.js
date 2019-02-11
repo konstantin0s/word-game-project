@@ -51,5 +51,5 @@
 
     setInterval(function(){
       generate();
-    }, 4000);
+    }, 5000);
 

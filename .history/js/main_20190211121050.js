@@ -48,8 +48,4 @@
     randomDiv.innerHTML = newText;
   }
 
-
-    setInterval(function(){
-      generate();
-    }, 4000);
-
+  generate();
