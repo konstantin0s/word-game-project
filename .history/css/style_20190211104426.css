@@ -81,12 +81,7 @@ input:focus::-webkit-input-placeholder {
 #user {
   position: relative;
   top: 100px;
-  left: 100px;
   color: white;
   font: 33px;
   font-family: 'Courier New', Courier, monospace;
-}
-
-font {
-  color: white;
 }
