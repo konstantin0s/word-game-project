@@ -94,3 +94,10 @@
  function resetInput() {
   document.getElementById("inputWord").value = "";
   }
+
+
+    // var randomDiv = document.getElementById("wordsDisplay");
+    // var wordName = randomDiv.getElementsByTagName("p");
+// var wordName;
+// var searchWord;
+    //search for match

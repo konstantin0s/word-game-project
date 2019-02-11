@@ -65,14 +65,14 @@
     // console.log(wordName);
      
     //  for (var i = 0; i < wordName.length; i++) {
-      //  console.log(wordName);
+       console.log(wordName);
          if (searchWord == wordName.innerHTML) {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
-          //  console.log(score);
+           console.log(score);
            addScore.textContent = score;
-          //  console.log(addScore);
+           console.log(addScore);
 
            setInterval(function(){
             wordName.style.backgroundColor = "";
@@ -84,7 +84,7 @@
          }
          if(flag == false) {
           alert("Game Over");
-          addScore.textContent = "0"
+          addScore.textContent = ""
           score = 0;
           resetInput();
       }
@@ -94,3 +94,10 @@
  function resetInput() {
   document.getElementById("inputWord").value = "";
   }
+
+
+    // var randomDiv = document.getElementById("wordsDisplay");
+    // var wordName = randomDiv.getElementsByTagName("p");
+// var wordName;
+// var searchWord;
+    //search for match

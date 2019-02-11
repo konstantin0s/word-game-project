@@ -105,13 +105,12 @@ font {
   position: relative;
   top: 200px;
  float: right;
- left: 450px;
   color: white;
 }
 
 #score {
   position: relative;
-  top: 0px;
-  left: 20px;
+  top: 200px;
+  left: 200px;
   color: white;
 }
