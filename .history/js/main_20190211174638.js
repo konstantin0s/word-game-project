@@ -96,7 +96,6 @@
         score = 0;
         addScore.textContent = "0"
         resetInput();
-        lives = 3;
       }
      }
     

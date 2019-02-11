@@ -83,20 +83,11 @@
          } else {
            wordName.style.backgroundColor = "";
          }
-          
          if(flag == false) {
-          // alert("Game Over");
-          lives--;
-          console.log(lives)
-          // score--;
-          // addScore.textContent = score;
+          alert("Game Over");
+          addScore.textContent = "0"
+          score = 0;
           resetInput();
-      } if (lives == 0) {
-        alert("Game Over");
-        score = 0;
-        addScore.textContent = "0"
-        resetInput();
-        lives = 3;
       }
      }
     

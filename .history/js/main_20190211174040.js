@@ -86,17 +86,13 @@
           
          if(flag == false) {
           // alert("Game Over");
-          lives--;
-          console.log(lives)
-          // score--;
-          // addScore.textContent = score;
+          score--;
+            addScore.textContent = score;
           resetInput();
-      } if (lives == 0) {
+      } else if (flag == false) {
         alert("Game Over");
-        score = 0;
         addScore.textContent = "0"
         resetInput();
-        lives = 3;
       }
      }
     
