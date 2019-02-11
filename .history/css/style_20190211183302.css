@@ -103,14 +103,10 @@ font {
 }
 #userDetails {
   position: relative;
-  top: 50px;
+  top: 200px;
  float: right;
- left: 500px;
+ left: 450px;
   color: white;
-  background-color: sandybrown;
-  width: 300px;
-  text-align: center;
-  border-radius: 5px;
 }
 
 #score {
@@ -118,27 +114,19 @@ font {
   top: 0px;
   left: 20px;
   color: white;
-  background-color: sandybrown;
+}
+
+
+#timeLeft {
+    position: relative;
+    top: 400px;
+    left: 450px;
+    color: white;
 }
 
 #time {
-  text-align: center;
-}
-
- p {
-  position: relative;
-  top: 450px;
-  left: 385px;
-  color: white;
-  background-color: sandybrown;
-  width: 300px;
-  border-radius: 5px;
- }
-
-#timeLeft {
   position: relative;
   top: 400px;
-  left: 330px;
+  left: 450px;
   color: white;
-  background-color: sandybrown;
 }

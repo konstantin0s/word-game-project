@@ -103,14 +103,10 @@ font {
 }
 #userDetails {
   position: relative;
-  top: 50px;
+  top: 200px;
  float: right;
- left: 500px;
+ left: 450px;
   color: white;
-  background-color: sandybrown;
-  width: 300px;
-  text-align: center;
-  border-radius: 5px;
 }
 
 #score {
@@ -118,10 +114,14 @@ font {
   top: 0px;
   left: 20px;
   color: white;
-  background-color: sandybrown;
 }
 
 #time {
+  /* background-color: sandybrown;
+  position: relative;
+  width: 300px;
+  left: 400px;
+  top: 500px; */
   text-align: center;
 }
 
@@ -141,4 +141,5 @@ font {
   left: 330px;
   color: white;
   background-color: sandybrown;
+  /* text-align: center; */
 }
