@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  z-index: 40;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.mt-5 {
+  color: white;
+  text-align: center;
+  position: relative;
+  left: 300px;
+}
+
+.input {
+  position: relative;
+  left: 350px;
+}
