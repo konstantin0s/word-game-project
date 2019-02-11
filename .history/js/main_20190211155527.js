@@ -71,8 +71,8 @@
 
            setInterval(function(){
             wordName.style.backgroundColor = "";
+            resetInput();
           }, 1000);
-          resetInput();
              flag = true;
          } else {
            wordName.style.backgroundColor = "";
