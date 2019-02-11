@@ -58,16 +58,12 @@ function wordGenerator() {
   var newText;
   var score = 0;
   var lives = 3;
-  var seconds = 5;
+  var seconds = 4;
 
 function timer() {
   setInterval(function(){
     seconds--;
     timeLeft.innerHTML = seconds;
-    if (seconds == 0) {
-      seconds = 5;
-      timeLeft.innerHTML = seconds;
-    }
   //  console.log(seconds);
 }, 1000);
 }

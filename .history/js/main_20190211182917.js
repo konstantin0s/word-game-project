@@ -64,10 +64,6 @@ function timer() {
   setInterval(function(){
     seconds--;
     timeLeft.innerHTML = seconds;
-    if (seconds == 0) {
-      seconds = 5;
-      timeLeft.innerHTML = seconds;
-    }
   //  console.log(seconds);
 }, 1000);
 }

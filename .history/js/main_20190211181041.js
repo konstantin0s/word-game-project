@@ -23,25 +23,20 @@
   //   document.getElementById('wordsDisplay').innerHTML = words[randomNum];
   //   console.log(randomNum);
   // }
+  
 
+  // setInterval(function(){
+
+  //   }, 5000);
  
   function init() {
-    wordGenerator();
-  
-    // if (wordGenerator) {
-    //    timer();
-    // } 
- 
+    setInterval(function(){
+      generate();
+      // timer();
+    }, 5000);
  }
  
  window.onload = init;
-
-function wordGenerator() {
-  setInterval(function(){
-    generate();
-  }, 5000);
-  timer();
-}
 
   var words = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "jackhammer",
@@ -58,19 +53,13 @@ function wordGenerator() {
   var newText;
   var score = 0;
   var lives = 3;
-  var seconds = 5;
+  var seconds = 4;
 
-function timer() {
-  setInterval(function(){
-    seconds--;
-    timeLeft.innerHTML = seconds;
-    if (seconds == 0) {
-      seconds = 5;
-      timeLeft.innerHTML = seconds;
-    }
-  //  console.log(seconds);
-}, 1000);
-}
+//   var timer = setInterval(function(){
+//     seconds--;
+//     timeLeft.innerHTML = seconds;
+//    console.log(seconds);
+// }, 1000);
 
   function generate() {
    randomIndex = Math.ceil((Math.random() * words.length - 1));
