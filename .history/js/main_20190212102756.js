@@ -5,17 +5,13 @@ function say_hi() {
 }
 
 function clearPlayer() {
-  document.getElementById("name").value = "";
-  var input = document.getElementById("name");
-  input.style.visibility = "hidden";
-  var playerN = document.getElementById("playerN");
-  playerN.style.visibility = "hidden";
+  document.getElementById('name').value = "";
 }
 
   (function() {
     setInterval(function(){
       clearPlayer();
-    }, 10000);
+    }, 5000);
 }());
 
 // document.getElementById('say').addEventListener('click', say_hi);

@@ -96,10 +96,10 @@ font {
 }
 #userDetails {
   position: relative;
-  top: 130px;
+  top: 150px;
  float: right;
  /* left: 500px; */
- left: 680px;
+ left: 650px;
   color: white;
   background-color: sandybrown;
   width: 300px;
@@ -144,7 +144,7 @@ b {
 
 #user {
   position: relative;
-  top: 350px;
+  top: 300px;
   right: 350px;
   float: right;
   color: white;
@@ -156,11 +156,7 @@ b {
   position: relative;
   color: white;
   float: right;
-  right: 410px;
+  right: 130px;
   font-size:28px;
   top: 280px;
-}
-
-#playerN {
-  color: white;
 }

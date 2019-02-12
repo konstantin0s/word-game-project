@@ -6,16 +6,16 @@ function say_hi() {
 
 function clearPlayer() {
   document.getElementById("name").value = "";
-  var input = document.getElementById("name");
-  input.style.visibility = "hidden";
-  var playerN = document.getElementById("playerN");
-  playerN.style.visibility = "hidden";
+  var x = document.getElementById("name");
+    x
+    x.style.display = 'none'; //or
+    x.style.visibility = 'hidden';
 }
 
   (function() {
     setInterval(function(){
       clearPlayer();
-    }, 10000);
+    }, 5000);
 }());
 
 // document.getElementById('say').addEventListener('click', say_hi);

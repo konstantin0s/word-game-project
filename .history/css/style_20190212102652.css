@@ -2,7 +2,6 @@ body {
   margin: 0;
   padding: 0;
   z-index: 40;
-  overflow-x: hidden;
 }
 
 .container {
@@ -79,6 +78,15 @@ input:focus::-webkit-input-placeholder {
   width: 202px;
 }
 
+#user {
+  position: relative;
+  top: 100px;
+  right: 50px;
+  float: right;
+  color: white;
+  font: 33px;
+  font-family: 'Courier New', Courier, monospace;
+}
 
 font {
   color: white
@@ -96,10 +104,9 @@ font {
 }
 #userDetails {
   position: relative;
-  top: 130px;
+  top: 50px;
  float: right;
- /* left: 500px; */
- left: 680px;
+ left: 500px;
   color: white;
   background-color: sandybrown;
   width: 300px;
@@ -142,25 +149,10 @@ b {
   text-transform: capitalize;;
 }
 
-#user {
-  position: relative;
-  top: 350px;
-  right: 350px;
-  float: right;
-  color: white;
-  font: 33px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
 #output {
   position: relative;
   color: white;
   float: right;
-  right: 410px;
-  font-size:28px;
-  top: 280px;
-}
-
-#playerN {
-  color: white;
+  right: 150px;
+  top: 60px;
 }

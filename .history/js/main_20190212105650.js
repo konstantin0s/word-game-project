@@ -7,9 +7,9 @@ function say_hi() {
 function clearPlayer() {
   document.getElementById("name").value = "";
   var input = document.getElementById("name");
-  input.style.visibility = "hidden";
-  var playerN = document.getElementById("playerN");
-  playerN.style.visibility = "hidden";
+  var h3 = document.getElementsByTagName("h3");
+  h3.style.visibility = "hidden";
+    input.style.visibility = "hidden";
 }
 
   (function() {
