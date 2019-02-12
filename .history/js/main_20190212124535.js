@@ -142,7 +142,6 @@ var timer = function() {
            addScore.textContent = score;
            if (score == 10) {
             flashLogo();
-            messagePlayer.innerHTML = "I'm Outta Here :)";
            }
            clearInterval(timer);
            setInterval(function(){

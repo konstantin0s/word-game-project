@@ -44,7 +44,6 @@ function clearPlayer() {
   //   console.log(randomNum);
   // }
 
-
 function cancelLevel1() { 
   if (score == 10) {
   }
@@ -86,23 +85,11 @@ function cancelLevel1() {
   var freshLives = document.getElementById("lives");
   var timeLeft = document.getElementById("timeLeft");
   var svgLogo = document.getElementById("Layer_1");
-   var messagePlayer = document.getElementById("messageP");
   var randomIndex;
   var newText;
   var score = 0;
   var lives = 3;
   var seconds = 5;
-
-
-  function flashLogo() {
-    var interval = window.setInterval(function(){
-      if(svgLogo.display == 'hidden'){
-        svgLogo.style.visibility = 'visible';
-      }else{
-        svgLogo.style.visibility = 'hidden';
-      }
-  }, 1000); //the 1000 here is milliseconds and determines how often the interval should be run.
-  }
 
 var timer = function() {
   setInterval(function(){
@@ -141,8 +128,7 @@ var timer = function() {
            score++;
            addScore.textContent = score;
            if (score == 10) {
-            flashLogo();
-            messagePlayer.innerHTML = "I'm Outta Here :)";
+          
            }
            clearInterval(timer);
            setInterval(function(){

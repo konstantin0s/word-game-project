@@ -203,10 +203,3 @@ b {
   filter: url(#pictureFilter);
   fill: #896d3d;
 }
-
-#messageP {
-  position: relative;
-  top: -50px;
-  width: 100px;
-  left: 500px;
-}

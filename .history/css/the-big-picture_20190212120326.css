@@ -4,7 +4,8 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-the-big-picture/blob/master/LICENSE)
  */
 body {
-  background: url('../img/drop.jpg') no-repeat center center fixed;
+  background: url('../img/words.jpg') no-repeat center center fixed;
+  /* background: url('https://unsplash.com/photos/ctXf1GVyf9A') no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

@@ -86,7 +86,6 @@ function cancelLevel1() {
   var freshLives = document.getElementById("lives");
   var timeLeft = document.getElementById("timeLeft");
   var svgLogo = document.getElementById("Layer_1");
-   var messagePlayer = document.getElementById("messageP");
   var randomIndex;
   var newText;
   var score = 0;
@@ -142,7 +141,6 @@ var timer = function() {
            addScore.textContent = score;
            if (score == 10) {
             flashLogo();
-            messagePlayer.innerHTML = "I'm Outta Here :)";
            }
            clearInterval(timer);
            setInterval(function(){

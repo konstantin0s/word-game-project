@@ -181,11 +181,9 @@ b {
 @import "compass/css3";
 
 .logo {
-  position: relative;
   width: 200px;
   height: 164px;
-  left: 450px;
-  top: -100px;
+  left: 200px;
 }
 
 .kiwi {
@@ -202,11 +200,4 @@ b {
 .ground:hover {
   filter: url(#pictureFilter);
   fill: #896d3d;
-}
-
-#messageP {
-  position: relative;
-  top: -50px;
-  width: 100px;
-  left: 500px;
 }

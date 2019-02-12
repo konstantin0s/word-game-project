@@ -82,17 +82,17 @@ input:focus::-webkit-input-placeholder {
 
 
 font {
-  color: white;
+   color: black;
 }
 
 #wordsDisplay {
   position: relative;
   top: 20px;
-  left: 387px;
-  color: black;
+  left: 395px;
+  color: white;
   font-family: 'Courier New', Courier, monospace;
   font-size: 30px;
-  width: 305px;
+  width: 300px;
   text-align: center;
 }
 #userDetails {
@@ -139,7 +139,7 @@ font {
 }
 
 b {
-  color: black;
+  color: white;
   text-transform: capitalize;;
 }
 
@@ -148,14 +148,14 @@ b {
   top: 350px;
   right: 350px;
   float: right;
-  color: black;
+  color: white;
   font: 33px;
   font-family: 'Courier New', Courier, monospace;
 }
 
 #output {
   position: relative;
-  color: black;
+  color: white;
   float: right;
   right: 250px;
   font-size:28px;
@@ -163,7 +163,7 @@ b {
 }
 
 #playerN {
-  color: black;
+  color: white;
 }
 
 .newP {
@@ -175,38 +175,4 @@ b {
 .navbar-brand {
   position: relative;
   left: -90px;
-}
-
-
-@import "compass/css3";
-
-.logo {
-  position: relative;
-  width: 200px;
-  height: 164px;
-  left: 450px;
-  top: -100px;
-}
-
-.kiwi {
-  fill: #94d31b; 
-
-}
-.kiwi:hover {
-  fill: #ace63c; 
-}
-
-.ground {
-  fill: #787f6a;
-}
-.ground:hover {
-  filter: url(#pictureFilter);
-  fill: #896d3d;
-}
-
-#messageP {
-  position: relative;
-  top: -50px;
-  width: 100px;
-  left: 500px;
 }
