@@ -129,26 +129,19 @@ var timer = function() {
     newText = wordsLevel2[randomIndex];
     randomDiv.innerHTML = newText;
    }
+ 
+   var sound = new buzz.sound("/sounds/sound", {
+    formats: [ "ogg", "mp3", "aac" ]
+});
 
-   var song;
-
-   function setup() {
-     song = loadSound('assets/lucky_dragons_-_power_melody.mp3');
-     createCanvas(720, 200);
-     background(255,0,0);
-   }
-
-
-function mousePressed() {
-  if ( song.isPlaying() ) { // .isPlaying() returns a boolean
-    song.stop();
-    background(255,0,0);
-  } else {
-    song.play();
-    background(0,255,0);
-  }
-}
-
+sound.play()
+     .fadeIn()
+     .loop()
+     .bind("timeupdate", function() {
+        var timer = buzz.toTimer(this.getTime());
+        document.getElementById("timer").innerHTML = timer;
+     });
+     
   function compareGuess() {
     var flag = false;
     var searchWord = document.getElementById("inputWord").value;
@@ -160,7 +153,7 @@ function mousePressed() {
            score++;
            addScore.textContent = score;
            if (score == 10) {
-            sound.play();
+            mySound.play();
             flashLogo();
             messagePlayer.innerHTML = "I'm Outta Here :)";
            }

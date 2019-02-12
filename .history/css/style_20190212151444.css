@@ -214,21 +214,19 @@ b {
 .instructions {
   background-color: #787f6a;
   width: 25%;
-  height: 250px;
+  height: 300px;
   color: white;
   position: relative;
-  left: 580px;
+  left: 658px;
   top: 220px;
   margin: 5px;
   text-align: center;
-  margin-bottom: 350px;
 }
 
 .instructions p {
   background-color: #787f6a;
   position: relative;
-  left: 80px;
+  left: 0px;
   top: 20px;
-  width: 1005;
   text-align: center;
 }

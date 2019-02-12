@@ -130,24 +130,18 @@ var timer = function() {
     randomDiv.innerHTML = newText;
    }
 
-   var song;
+   var mySound = new buzz.sound( "/sounds/0283.ogg", {
+    formats: [ "ogg", "mp3", "aac" ]
+});
+mySound.play().fadeIn().loop();
 
-   function setup() {
-     song = loadSound('assets/lucky_dragons_-_power_melody.mp3');
-     createCanvas(720, 200);
-     background(255,0,0);
-   }
-
-
-function mousePressed() {
-  if ( song.isPlaying() ) { // .isPlaying() returns a boolean
-    song.stop();
-    background(255,0,0);
-  } else {
-    song.play();
-    background(0,255,0);
-  }
-}
+// mySound.play()
+//      .fadeIn()
+//      .loop()
+//      .bind("timeupdate", function() {
+//         var timer = buzz.toTimer(this.getTime());
+//         document.getElementById("timer").innerHTML = timer;
+//      });
 
   function compareGuess() {
     var flag = false;

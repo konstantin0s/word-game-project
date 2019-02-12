@@ -88,7 +88,7 @@ function cancelLevel1() {
   var svgLogo = document.getElementById("Layer_1");
    var messagePlayer = document.getElementById("messageP");
   var randomIndex;
-  var mySound = document.getElementById("myTune");
+  var mySound;
   var myMusic;
   var newText;
   var score = 0;
@@ -129,24 +129,20 @@ var timer = function() {
     newText = wordsLevel2[randomIndex];
     randomDiv.innerHTML = newText;
    }
-
-   var song;
-
-   function setup() {
-     song = loadSound('assets/lucky_dragons_-_power_melody.mp3');
-     createCanvas(720, 200);
-     background(255,0,0);
-   }
-
-
-function mousePressed() {
-  if ( song.isPlaying() ) { // .isPlaying() returns a boolean
-    song.stop();
-    background(255,0,0);
-  } else {
-    song.play();
-    background(0,255,0);
-  }
+ 
+   function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
 }
 
   function compareGuess() {
@@ -160,13 +156,15 @@ function mousePressed() {
            score++;
            addScore.textContent = score;
            if (score == 10) {
-            sound.play();
+            myMusic = new sound("gametheme.mp3");
+            myMusic.play()
             flashLogo();
             messagePlayer.innerHTML = "I'm Outta Here :)";
            }
            clearInterval(timer);
            setInterval(function(){
             wordName.style.backgroundColor = "";
+            myMusic.pause()
           }, 1500);
           resetInput();
              flag = true;

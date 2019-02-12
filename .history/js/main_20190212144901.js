@@ -138,17 +138,6 @@ var timer = function() {
      background(255,0,0);
    }
 
-
-function mousePressed() {
-  if ( song.isPlaying() ) { // .isPlaying() returns a boolean
-    song.stop();
-    background(255,0,0);
-  } else {
-    song.play();
-    background(0,255,0);
-  }
-}
-
   function compareGuess() {
     var flag = false;
     var searchWord = document.getElementById("inputWord").value;
