@@ -96,10 +96,10 @@ font {
 }
 #userDetails {
   position: relative;
-  top: 230px;
+  top: 130px;
  float: right;
  /* left: 500px; */
- left: 740px;
+ left: 680px;
   color: white;
   background-color: sandybrown;
   width: 300px;
@@ -169,9 +169,4 @@ b {
   position: relative;
   left: 40px;
   top: 120px;
-}
-
-.navbar-brand {
-  position: relative;
-  left: -90px;
 }

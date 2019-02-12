@@ -12,8 +12,6 @@ function clearPlayer() {
   playerN.style.visibility = "hidden";
   var clearPlayer = document.getElementById("clearPlayer");
   clearPlayer.style.visibility = "hidden";
-  var exampleModalCenter = document.getElementById("exampleModalCenter");
-  exampleModalCenter.style.visibility = "none";
 }
 
   (function() {

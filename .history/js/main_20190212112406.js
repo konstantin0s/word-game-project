@@ -13,7 +13,7 @@ function clearPlayer() {
   var clearPlayer = document.getElementById("clearPlayer");
   clearPlayer.style.visibility = "hidden";
   var exampleModalCenter = document.getElementById("exampleModalCenter");
-  exampleModalCenter.style.visibility = "none";
+  exampleModalCenter.style.visibility = "hidden";
 }
 
   (function() {
