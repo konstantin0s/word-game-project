@@ -5,14 +5,13 @@ function say_hi() {
 }
 
 function clearPlayer() {
-  document.getElementById('name').value = "";
+  document.getElementById('name').innerHTML = "";
 }
 
-  (function() {
+
     setInterval(function(){
       clearPlayer();
     }, 5000);
-}());
 
 // document.getElementById('say').addEventListener('click', say_hi);
 

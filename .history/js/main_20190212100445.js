@@ -1,20 +1,8 @@
-function say_hi() {
-  var name = document.getElementById('name').value;
-  var html = 'Good Luck, <b>' + name + '</b> ';
- document.getElementById('output').innerHTML = html;
-}
+// var customerName = prompt("Please enter your name", "");
+// if (customerName!= null) {
+//     document.getElementById("user").value = customerName;
+// }
 
-function clearPlayer() {
-  document.getElementById('name').value = "";
-}
-
-  (function() {
-    setInterval(function(){
-      clearPlayer();
-    }, 5000);
-}());
-
-// document.getElementById('say').addEventListener('click', say_hi);
 
 // {
 //   var name = prompt ('Your name','');
@@ -36,6 +24,12 @@ function clearPlayer() {
   //   console.log(randomNum);
   // }
 
+//   (function() {
+//     setInterval(function(){
+//       generate();
+//     }, 5000);
+//     timer();
+// }());
 function cancelLevel1() { 
   if (score == 10) {
   }
@@ -57,6 +51,9 @@ function cancelLevel1() {
     timer();
 }
 
+// if (score == 10) {
+//   wordGeneratorLevel2();
+// }
   var wordsLevel1 = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
 "curl", "rate", "busy", "unusual", "extend", "exclusive", "ray", "shy", "wasteful", "unbecoming", "fallacious",
@@ -69,8 +66,6 @@ function cancelLevel1() {
      "pluperfect", "jellygraph", "quickthorn", "rottweiler", "technician", "cowpuncher", "middlebrow",
      "jackhammer", "triphthong", "wunderkind", "dazzlement", "jabberwock", "witchcraft","pawnbroker", "thumbprint", "motorcycle"
        ];
-
-       const levels = [3, 5, 7];
 
   var randomDiv = document.getElementById("wordsDisplay");
   var addScore = document.getElementById("score");

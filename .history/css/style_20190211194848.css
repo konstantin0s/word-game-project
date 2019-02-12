@@ -88,7 +88,10 @@ input:focus::-webkit-input-placeholder {
 }
 
 font {
-  color: white
+  color: white;
+  position: relative;
+  left: 10px;
+  top: 400px;
 }
 
 #wordsDisplay {
@@ -141,9 +144,4 @@ font {
   left: 330px;
   color: white;
   background-color: sandybrown;
-}
-
-b {
-  color: white;
-  text-transform: capitalize;;
 }

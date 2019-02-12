@@ -1,18 +1,11 @@
 function say_hi() {
   var name = document.getElementById('name').value;
+ 
+
   var html = 'Good Luck, <b>' + name + '</b> ';
- document.getElementById('output').innerHTML = html;
-}
 
-function clearPlayer() {
-  document.getElementById('name').value = "";
+  document.getElementById('output').innerHTML = html;
 }
-
-  (function() {
-    setInterval(function(){
-      clearPlayer();
-    }, 5000);
-}());
 
 // document.getElementById('say').addEventListener('click', say_hi);
 
@@ -36,6 +29,12 @@ function clearPlayer() {
   //   console.log(randomNum);
   // }
 
+//   (function() {
+//     setInterval(function(){
+//       generate();
+//     }, 5000);
+//     timer();
+// }());
 function cancelLevel1() { 
   if (score == 10) {
   }

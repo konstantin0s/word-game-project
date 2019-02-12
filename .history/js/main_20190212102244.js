@@ -8,11 +8,10 @@ function clearPlayer() {
   document.getElementById('name').value = "";
 }
 
-  (function() {
+
     setInterval(function(){
       clearPlayer();
     }, 5000);
-}());
 
 // document.getElementById('say').addEventListener('click', say_hi);
 

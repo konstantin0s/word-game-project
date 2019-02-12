@@ -11,7 +11,7 @@ function clearPlayer() {
   (function() {
     setInterval(function(){
       clearPlayer();
-    }, 5000);
+    }, 2000);
 }());
 
 // document.getElementById('say').addEventListener('click', say_hi);

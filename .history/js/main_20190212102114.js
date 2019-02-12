@@ -5,7 +5,7 @@ function say_hi() {
 }
 
 function clearPlayer() {
-  document.getElementById('name').value = "";
+  document.getElementById('name').innerHTML = "";
 }
 
   (function() {
