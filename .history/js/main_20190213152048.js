@@ -222,10 +222,7 @@ function createCustomAlert(txt) {
 	btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
 	btn.href = "#";
 	btn.focus();
-  btn.onclick = function() { removeCustomAlert();
-      audio.pause();
-  
-    return false; }
+	btn.onclick = function() { removeCustomAlert();return false; }
 
 	alertObj.style.display = "block";
 	

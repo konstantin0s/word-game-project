@@ -88,6 +88,8 @@ function cancelLevel1() {
   function checkLife() {
     if (lives == 0) {
       createCustomAlert(); // game over
+      audio = new Audio('http://www.project818.com/files/music/TI-Justin-Timberlake-Dead-and-Gone.mp3');
+       audio.play();
       score = 0;
       addScore.textContent = "0"
       resetInput();
@@ -188,7 +190,7 @@ var ALERT_BUTTON_TEXT = "Ok";
 if(document.getElementById) {
 	window.alert = function(txt) {
     createCustomAlert(txt);
-	} 
+	}
 }
 
 function createCustomAlert(txt) {
@@ -213,19 +215,14 @@ function createCustomAlert(txt) {
 
 	msg = alertObj.appendChild(d.createElement("p"));
 	//msg.appendChild(d.createTextNode(txt));
-  msg.innerHTML = txt;
-  audio = new Audio('http://www.project818.com/files/music/TI-Justin-Timberlake-Dead-and-Gone.mp3');
-  audio.play();
+	msg.innerHTML = txt;
 
 	btn = alertObj.appendChild(d.createElement("a"));
 	btn.id = "closeBtn";
 	btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
 	btn.href = "#";
 	btn.focus();
-  btn.onclick = function() { removeCustomAlert();
-      audio.pause();
-  
-    return false; }
+	btn.onclick = function() { removeCustomAlert();return false; }
 
 	alertObj.style.display = "block";
 	

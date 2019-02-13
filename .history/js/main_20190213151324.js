@@ -187,14 +187,16 @@ var ALERT_BUTTON_TEXT = "Ok";
 
 if(document.getElementById) {
 	window.alert = function(txt) {
-    createCustomAlert(txt);
-	} 
+		createCustomAlert(txt);
+	}
 }
 
 function createCustomAlert(txt) {
 	d = document;
 
   if(d.getElementById("modalContainer"))
+  audio = new Audio('http://www.project818.com/files/music/TI-Justin-Timberlake-Dead-and-Gone.mp3');
+audio.play();
    return;
 
 	mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
@@ -213,19 +215,14 @@ function createCustomAlert(txt) {
 
 	msg = alertObj.appendChild(d.createElement("p"));
 	//msg.appendChild(d.createTextNode(txt));
-  msg.innerHTML = txt;
-  audio = new Audio('http://www.project818.com/files/music/TI-Justin-Timberlake-Dead-and-Gone.mp3');
-  audio.play();
+	msg.innerHTML = txt;
 
 	btn = alertObj.appendChild(d.createElement("a"));
 	btn.id = "closeBtn";
 	btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
 	btn.href = "#";
 	btn.focus();
-  btn.onclick = function() { removeCustomAlert();
-      audio.pause();
-  
-    return false; }
+	btn.onclick = function() { removeCustomAlert();return false; }
 
 	alertObj.style.display = "block";
 	
