@@ -23,6 +23,12 @@ function clearPlayer() {
       clearPlayer();
     }, 10000);
 }());
+
+function cancelLevel1() { 
+  if (score == 10) {
+  }
+  return;
+}
  
   var wordGeneratorLevel1 = function() {
     setInterval(function(){
@@ -60,20 +66,20 @@ function clearPlayer() {
   var svgLogo = document.getElementById("Layer_1");
    var messagePlayer = document.getElementById("messageP");
    var corWrong = document.getElementById("corWrong");
-   var dinaSec = document.getElementById("sec");
   var randomIndex;
   var newText;
   var score = 0;
   var lives = 5;
   var seconds = 5;
+  var currentLevel;
 
   const levels = {
-    easy: 6,
-    medium: 4,
-    hard: 2
+    easy: 7,
+    medium: 5,
+    hard: 3
   }
 
-  const currentLevel = levels.medium;
+  currentLevel = levels.medium;
 
 
   function flashLogo() {
@@ -117,7 +123,7 @@ function clearPlayer() {
     var searchWord = document.getElementById("inputWord").value;
     var wordName = document.getElementById("wordsDisplay");
     flag = false;          
-         if (searchWord == wordName.innerHTML && seconds > 0) {
+         if (searchWord == wordName.innerHTML) {
           corWrong.innerHTML = "Correct!!!"
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
@@ -154,25 +160,22 @@ function clearPlayer() {
       function timer() {
         setInterval(function(){
           seconds--;
-          dinaSec.innerHTML = seconds;
           timeLeft.innerHTML = seconds;
           if (seconds == 0 && !flag) {
             lives--;
           }
            if(seconds == 0) {
             freshLives.innerHTML = lives;
-            seconds = currentLevel + 1; 
-            dinaSec.innerHTML = seconds;
+            seconds = 5;
             timeLeft.innerHTML = seconds;
             checkLife();
-            flag = false;
+            flag = false
            } 
       }, 1000);
       }
       
-var res = false;
+
  function resetInput() {
-   res = true;
   document.getElementById("inputWord").value = "";
   // corWrong.innerHTML = "";
   }

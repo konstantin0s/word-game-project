@@ -60,7 +60,7 @@ function clearPlayer() {
   var svgLogo = document.getElementById("Layer_1");
    var messagePlayer = document.getElementById("messageP");
    var corWrong = document.getElementById("corWrong");
-   var dinaSec = document.getElementById("sec");
+   var dinaSec = document.getElementsByClassName("sec");
   var randomIndex;
   var newText;
   var score = 0;
@@ -70,7 +70,7 @@ function clearPlayer() {
   const levels = {
     easy: 6,
     medium: 4,
-    hard: 2
+    hard: 3
   }
 
   const currentLevel = levels.medium;
@@ -154,7 +154,6 @@ function clearPlayer() {
       function timer() {
         setInterval(function(){
           seconds--;
-          dinaSec.innerHTML = seconds;
           timeLeft.innerHTML = seconds;
           if (seconds == 0 && !flag) {
             lives--;

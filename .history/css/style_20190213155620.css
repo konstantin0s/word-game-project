@@ -11,11 +11,6 @@ body {
   justify-content: center;
   
 }
-
-.container .type {
-   position: relative;
-   top: 20px;
-}
 .mt-5 {
   color: black;
   text-align: center;
@@ -140,15 +135,7 @@ font {
   top: 400px;
   left: 330px;
   color: white;
-  background-color: sandybrown;
-}
-
-.sec {
-  position: relative;
-  top: 400px;
-  left: 330px;
-  color: white;
-  background-color: sandybrown;
+  background-color: sandybrown;g
 }
 
 b {

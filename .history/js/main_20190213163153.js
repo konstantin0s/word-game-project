@@ -154,7 +154,6 @@ function clearPlayer() {
       function timer() {
         setInterval(function(){
           seconds--;
-          dinaSec.innerHTML = seconds;
           timeLeft.innerHTML = seconds;
           if (seconds == 0 && !flag) {
             lives--;

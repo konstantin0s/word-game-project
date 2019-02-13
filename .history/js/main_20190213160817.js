@@ -23,6 +23,12 @@ function clearPlayer() {
       clearPlayer();
     }, 10000);
 }());
+
+function cancelLevel1() { 
+  if (score == 10) {
+  }
+  return;
+}
  
   var wordGeneratorLevel1 = function() {
     setInterval(function(){
@@ -60,7 +66,6 @@ function clearPlayer() {
   var svgLogo = document.getElementById("Layer_1");
    var messagePlayer = document.getElementById("messageP");
    var corWrong = document.getElementById("corWrong");
-   var dinaSec = document.getElementById("sec");
   var randomIndex;
   var newText;
   var score = 0;
@@ -68,9 +73,9 @@ function clearPlayer() {
   var seconds = 5;
 
   const levels = {
-    easy: 6,
-    medium: 4,
-    hard: 2
+    easy: 7,
+    medium: 5,
+    hard: 3
   }
 
   const currentLevel = levels.medium;
@@ -124,6 +129,8 @@ function clearPlayer() {
            score++;
            addScore.textContent = score;
            flag = true;
+           seconds = 0;
+          //  seconds = 5;
            if (score >= 10 && score <= 11) {
             var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3');
             audio.play();
@@ -154,18 +161,16 @@ function clearPlayer() {
       function timer() {
         setInterval(function(){
           seconds--;
-          dinaSec.innerHTML = seconds;
           timeLeft.innerHTML = seconds;
           if (seconds == 0 && !flag) {
             lives--;
           }
            if(seconds == 0) {
             freshLives.innerHTML = lives;
-            seconds = currentLevel + 1; 
-            dinaSec.innerHTML = seconds;
+            seconds = 5;
             timeLeft.innerHTML = seconds;
             checkLife();
-            flag = false;
+            flag = false
            } 
       }, 1000);
       }
