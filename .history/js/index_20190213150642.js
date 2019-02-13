@@ -23,7 +23,6 @@ window.onclick = function(event) {
   }
 }
 
-
 function audioStyle() {
   var audio = new Audio('http://djseb3.free.fr/remix/mast/50%20Cent%20&%20Olivia%20-%20Candy%20Shop%20(DJ%20Mast%20Remix).mp3');
   audio.play();
