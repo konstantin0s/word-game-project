@@ -67,7 +67,7 @@ function cancelLevel1() {
   var randomIndex;
   var newText;
   var score = 0;
-  var lives = 4;
+  var lives = 3;
   var seconds = 5;
 
 
@@ -88,11 +88,24 @@ function cancelLevel1() {
       score = 0;
       addScore.textContent = "0"
       resetInput();
-      lives = 4;
+      lives = 3;
       freshLives.innerHTML = lives;
     }
   }
 
+function timer() {
+  setInterval(function(){
+    seconds--;
+    timeLeft.innerHTML = seconds;
+    if (seconds == 0) {
+      lives--;
+      freshLives.innerHTML = lives;
+      seconds = 5;
+      timeLeft.innerHTML = seconds;
+      checkLife();
+    }
+}, 1000);
+}
 
   function generate() {
    randomIndex = Math.ceil((Math.random() * wordsLevel1.length - 1));
@@ -108,20 +121,18 @@ function cancelLevel1() {
    }
  
   //  wordGeneratorLevel1();
-  var flag;
+
   function compareGuess() {
+    var flag = false;
     var searchWord = document.getElementById("inputWord").value;
     var wordName = document.getElementById("wordsDisplay");
-    flag = false;          
+          
          if (searchWord == wordName.innerHTML) {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
            addScore.textContent = score;
-           flag = true;
            if (score == 10) {
-             lives++
-             freshLives.innerHTML = lives;
             flashLogo();
             messagePlayer.innerHTML = "I'm Outta Here :)";
            }
@@ -151,30 +162,12 @@ function cancelLevel1() {
       }
     
 
-      // function startGame() {
-      //   setInterval(function(){
-      //     wordGeneratorLevel2();
-      //   }, 5000);
-      // }
-  
-
-      function timer() {
+      function startGame() {
         setInterval(function(){
-          seconds--;
-          timeLeft.innerHTML = seconds;
-          if (seconds == 0 && !flag) {
-            lives--;
-          }
-           if(seconds == 0) {
-            freshLives.innerHTML = lives;
-            seconds = 5;
-            timeLeft.innerHTML = seconds;
-            checkLife();
-            flag = false
-           } 
-      }, 1000);
+          generateLevel2() 
+        }, 1000);
       }
-      
+  
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
@@ -182,10 +175,11 @@ function cancelLevel1() {
 
 
   function init() {
-    alert("Start Game!");
-    wordGeneratorLevel1();
-    lives = 4;
-    freshLives.innerHTML = lives;
+    // alert("Start Game!");
+    // wordGeneratorLevel1();
+
+    startGame();
+  
    }
    
 

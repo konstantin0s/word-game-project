@@ -14,6 +14,7 @@ function clearPlayer() {
   clearPlayer.style.visibility = "hidden";
   var exampleModalCenter = document.getElementById("exampleModalCenter");
   exampleModalCenter.style.visibility = "none";
+
 }
 
   (function() {
@@ -21,6 +22,8 @@ function clearPlayer() {
       clearPlayer();
     }, 10000);
 }());
+
+
 
 function cancelLevel1() { 
   if (score == 10) {
@@ -56,7 +59,13 @@ function cancelLevel1() {
      "jackhammer", "triphthong", "wunderkind", "dazzlement", "jabberwock", "witchcraft","pawnbroker", "thumbprint", "motorcycle"
        ];
 
-       const levels = [3, 5, 7];
+       const levels = {
+         easy: 6,
+         medium: 4,
+         hard: 2
+       };
+
+       const currentLevel = levels.medium;
 
   var randomDiv = document.getElementById("wordsDisplay");
   var addScore = document.getElementById("score");
@@ -67,32 +76,41 @@ function cancelLevel1() {
   var randomIndex;
   var newText;
   var score = 0;
-  var lives = 4;
+  var lives = 3;
   var seconds = 5;
 
 
   function flashLogo() {
     var interval = window.setInterval(function(){
-      if(svgLogo.display !== 'hidden'){
-        svgLogo.style.visibility = 'hidden';
-    
+      if(svgLogo.display == 'hidden'){
+        svgLogo.style.visibility = 'visible';
       }else{
         svgLogo.style.visibility = 'hidden';
       }
-  }, 1000);  
+  }, 1000); //the 1000 here is milliseconds and determines how often the interval should be run.
   }
 
-  function checkLife() {
+var timer = function() {
+  setInterval(function(){
+    seconds--;
+    timeLeft.innerHTML = seconds;
+    if (seconds == 0) {
+      lives--;
+      freshLives.innerHTML = lives;
+      console.log("Game is over nowe");
+       seconds = 5;
+      timeLeft.innerHTML = seconds;
+    }  
     if (lives == 0) {
       alert("Game Over");
       score = 0;
       addScore.textContent = "0"
       resetInput();
-      lives = 4;
+      lives = 3;
       freshLives.innerHTML = lives;
     }
-  }
-
+}, 1000);
+}
 
   function generate() {
    randomIndex = Math.ceil((Math.random() * wordsLevel1.length - 1));
@@ -108,20 +126,21 @@ function cancelLevel1() {
    }
  
   //  wordGeneratorLevel1();
-  var flag;
+
   function compareGuess() {
+    var flag = false;
     var searchWord = document.getElementById("inputWord").value;
     var wordName = document.getElementById("wordsDisplay");
-    flag = false;          
+         if (searchWord != wordName.innerHTML && searchWord == "") {
+           console.log("Game over");
+         }
+          
          if (searchWord == wordName.innerHTML) {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
            addScore.textContent = score;
-           flag = true;
            if (score == 10) {
-             lives++
-             freshLives.innerHTML = lives;
             flashLogo();
             messagePlayer.innerHTML = "I'm Outta Here :)";
            }
@@ -135,46 +154,20 @@ function cancelLevel1() {
            wordName.style.backgroundColor = "";
          }
           
-         if (flag == false) {
+         if(flag == false) {
           lives--;
           freshLives.innerHTML = lives;
           resetInput();
-         }  
-         checkLife();
-      // } if (lives == 0) {
-      //   alert("Game Over");
-      //   score = 0;
-      //   addScore.textContent = "0"
-      //   resetInput();
-      //   lives = 3;
-      //   freshLives.innerHTML = lives;
+      } if (lives == 0) {
+        alert("Game Over");
+        score = 0;
+        addScore.textContent = "0"
+        resetInput();
+        lives = 3;
+        freshLives.innerHTML = lives;
       }
-    
-
-      // function startGame() {
-      //   setInterval(function(){
-      //     wordGeneratorLevel2();
-      //   }, 5000);
-      // }
+     }
   
-
-      function timer() {
-        setInterval(function(){
-          seconds--;
-          timeLeft.innerHTML = seconds;
-          if (seconds == 0 && !flag) {
-            lives--;
-          }
-           if(seconds == 0) {
-            freshLives.innerHTML = lives;
-            seconds = 5;
-            timeLeft.innerHTML = seconds;
-            checkLife();
-            flag = false
-           } 
-      }, 1000);
-      }
-      
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
@@ -182,12 +175,65 @@ function cancelLevel1() {
 
 
   function init() {
-    alert("Start Game!");
     wordGeneratorLevel1();
-    lives = 4;
-    freshLives.innerHTML = lives;
+  
    }
    
 
  window.onload = init;
+ 
 
+ //game Over pop UP
+ var ALERT_TITLE = "Game Over!";
+var ALERT_BUTTON_TEXT = "Restart";
+
+if(document.getElementById) {
+	window.alert = function(txt) {
+		createCustomAlert(txt);
+	}
+}
+
+function createCustomAlert(txt) {
+	d = document;
+
+	if(d.getElementById("modalContainer")) return;
+
+	mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+	mObj.id = "modalContainer";
+	mObj.style.height = d.documentElement.scrollHeight + "px";
+	
+	alertObj = mObj.appendChild(d.createElement("div"));
+	alertObj.id = "alertBox";
+	if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+	alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
+	alertObj.style.visiblity="visible";
+
+	h1 = alertObj.appendChild(d.createElement("h1"));
+	h1.appendChild(d.createTextNode(ALERT_TITLE));
+
+	msg = alertObj.appendChild(d.createElement("p"));
+	//msg.appendChild(d.createTextNode(txt));
+	msg.innerHTML = txt;
+
+	btn = alertObj.appendChild(d.createElement("a"));
+	btn.id = "closeBtn";
+	btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+	btn.href = "#";
+	btn.focus();
+	btn.onclick = function() { 
+    clearInterval(timer);
+    // isPlaying = true;
+    // seconds = 6;
+    // timeLeft.innerHTML = seconds;
+    removeCustomAlert();return false; }
+
+	alertObj.style.display = "block";
+	
+}
+
+function removeCustomAlert() {
+	document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+}
+function ful(){
+alert('Alert this pages');
+}

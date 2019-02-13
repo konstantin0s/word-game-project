@@ -108,11 +108,11 @@ function cancelLevel1() {
    }
  
   //  wordGeneratorLevel1();
-  var flag;
+
   function compareGuess() {
     var searchWord = document.getElementById("inputWord").value;
     var wordName = document.getElementById("wordsDisplay");
-    flag = false;          
+    var flag = false;          
          if (searchWord == wordName.innerHTML) {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
@@ -162,16 +162,13 @@ function cancelLevel1() {
         setInterval(function(){
           seconds--;
           timeLeft.innerHTML = seconds;
-          if (seconds == 0 && !flag) {
+          if (seconds == 0) {
             lives--;
-          }
-           if(seconds == 0) {
             freshLives.innerHTML = lives;
             seconds = 5;
             timeLeft.innerHTML = seconds;
             checkLife();
-            flag = false
-           } 
+          }
       }, 1000);
       }
       

@@ -85,6 +85,7 @@ function cancelLevel1() {
   function checkLife() {
     if (lives == 0) {
       alert("Game Over");
+      freshLives.innerHTML = lives;
       score = 0;
       addScore.textContent = "0"
       resetInput();

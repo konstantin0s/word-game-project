@@ -170,8 +170,8 @@ function cancelLevel1() {
             seconds = 5;
             timeLeft.innerHTML = seconds;
             checkLife();
-            flag = false
            } 
+          }
       }, 1000);
       }
       

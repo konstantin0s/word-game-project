@@ -267,8 +267,7 @@ b {
 	margin:0;
 	font:bold 1em Raleway,arial;
 	background-color:#f97352;
-  color:#FFF;
-  text-align: center;
+	color:#FFF;
 	border-bottom:1px solid #f97352;
 	padding:10px 0 10px 5px;
 }
@@ -286,7 +285,7 @@ b {
 	display:block;
 	position:relative;
 	margin:10px auto 10px auto;
-  padding:7px;
+	padding:7px;
 	border:0 none;
 	width:170px;
 	text-transform:uppercase;
@@ -301,7 +300,7 @@ b {
 /* unrelated styles */
 
 #mContainer {
-  position:relative;
+	position:relative;
 	width:600px;
 	margin:auto;
 	padding:5px;
@@ -312,6 +311,7 @@ b {
 h1,h2 {
 	margin:0;
   padding:4px;
+  left: 30px;
 }
 
 code {
@@ -341,7 +341,7 @@ code {
 .important {
 	background-color:#F5FCC8;
 	padding:2px;
-   
+
 }
 
 @media (max-width: 600px) 

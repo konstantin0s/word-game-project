@@ -57,7 +57,8 @@ function cancelLevel1() {
        ];
 
        const levels = [3, 5, 7];
-
+  var searchWord = document.getElementById("inputWord").value;
+  var wordName = document.getElementById("wordsDisplay");
   var randomDiv = document.getElementById("wordsDisplay");
   var addScore = document.getElementById("score");
   var freshLives = document.getElementById("lives");
@@ -108,17 +109,14 @@ function cancelLevel1() {
    }
  
   //  wordGeneratorLevel1();
-  var flag;
+
   function compareGuess() {
-    var searchWord = document.getElementById("inputWord").value;
-    var wordName = document.getElementById("wordsDisplay");
-    flag = false;          
+    var flag = false;          
          if (searchWord == wordName.innerHTML) {
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
            addScore.textContent = score;
-           flag = true;
            if (score == 10) {
              lives++
              freshLives.innerHTML = lives;
@@ -162,16 +160,13 @@ function cancelLevel1() {
         setInterval(function(){
           seconds--;
           timeLeft.innerHTML = seconds;
-          if (seconds == 0 && !flag) {
+          if (seconds == 0) {
             lives--;
-          }
-           if(seconds == 0) {
             freshLives.innerHTML = lives;
             seconds = 5;
             timeLeft.innerHTML = seconds;
             checkLife();
-            flag = false
-           } 
+          }
       }, 1000);
       }
       

@@ -164,14 +164,11 @@ function cancelLevel1() {
           timeLeft.innerHTML = seconds;
           if (seconds == 0 && !flag) {
             lives--;
-          }
-           if(seconds == 0) {
             freshLives.innerHTML = lives;
             seconds = 5;
             timeLeft.innerHTML = seconds;
             checkLife();
-            flag = false
-           } 
+          }
       }, 1000);
       }
       
