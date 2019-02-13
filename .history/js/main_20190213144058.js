@@ -88,6 +88,7 @@ function cancelLevel1() {
   function checkLife() {
     if (lives == 0) {
       createCustomAlert(); // game over
+      document.body.style.backgroundImage = "url('img/gameover.jpg')";
       score = 0;
       addScore.textContent = "0"
       resetInput();
@@ -182,6 +183,7 @@ function cancelLevel1() {
 
  window.onload = init;
 
+
  var ALERT_TITLE = "Game Over!\n Restart?";
 var ALERT_BUTTON_TEXT = "Ok";
 
@@ -192,6 +194,7 @@ if(document.getElementById) {
 }
 
 function createCustomAlert(txt) {
+  document.body.style.backgroundImage = "url('img/gameover.jpg')";
 	d = document;
 
 	if(d.getElementById("modalContainer")) return;
@@ -204,8 +207,7 @@ function createCustomAlert(txt) {
 	alertObj.id = "alertBox";
 	if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
 	alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
-  alertObj.style.visiblity="visible";
-  alertObj.style.left="480px";
+	alertObj.style.visiblity="visible";
 
 	h1 = alertObj.appendChild(d.createElement("h1"));
 	h1.appendChild(d.createTextNode(ALERT_TITLE));
@@ -228,7 +230,7 @@ function createCustomAlert(txt) {
 function removeCustomAlert() {
   document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
 
-   
+    document.body.style.backgroundImage = "url('img/drop.jpg')";
 }
 function ful(){
 alert('Game Over!!!');

@@ -271,7 +271,7 @@ b {
 	border:1px solid #fff;
 	background-color:#fff;
 	background-repeat:no-repeat;
-  top:30%;
+  top:40%;
   left: 500px;
 }
 
@@ -316,7 +316,7 @@ b {
 
 /* unrelated styles */
 
- /* #mContainer {
+ #mContainer {
   position:relative;
 	width:600px;
 	margin:auto;
@@ -367,4 +367,4 @@ code {
 	width:90%;
   top:30%;
 }
-} */
+}

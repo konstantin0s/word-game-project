@@ -262,7 +262,7 @@ b {
 }
 
 #alertBox {
-	position:relative;
+	position:fixed;
   width:43%;
   height: 25%;
 	min-height:100px;
@@ -316,7 +316,7 @@ b {
 
 /* unrelated styles */
 
- /* #mContainer {
+ #mContainer {
   position:relative;
 	width:600px;
 	margin:auto;
@@ -367,4 +367,4 @@ code {
 	width:90%;
   top:30%;
 }
-} */
+}

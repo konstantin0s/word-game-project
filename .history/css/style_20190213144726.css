@@ -272,11 +272,11 @@ b {
 	background-color:#fff;
 	background-repeat:no-repeat;
   top:30%;
-  left: 500px;
+  left: 30px;
 }
 
 #modalContainer > #alertBox {
-  position:fixed;
+	position:fixed;
 }
 
 #alertBox h1 {
@@ -316,7 +316,7 @@ b {
 
 /* unrelated styles */
 
- /* #mContainer {
+ #mContainer {
   position:relative;
 	width:600px;
 	margin:auto;
@@ -367,4 +367,4 @@ code {
 	width:90%;
   top:30%;
 }
-} */
+}
