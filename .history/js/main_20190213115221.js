@@ -174,7 +174,7 @@ function cancelLevel1() {
 
 
   function init() {
-    // alert("Start Game!");
+    alert("Start Game!");
     wordGeneratorLevel1();
     lives = 5;
     freshLives.innerHTML = lives;
