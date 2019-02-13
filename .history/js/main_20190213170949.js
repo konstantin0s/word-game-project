@@ -62,8 +62,8 @@ function clearPlayer() {
    var corWrong = document.getElementById("corWrong");
    var dinaSec = document.getElementById("sec");
    var ease = document.getElementsByClassName("easy");
-   var mediu = document.getElementsByClassName("easy");
-   var hars = document.getElementsByClassName("easy");
+   var mediu = document.getElementsByClassName("medium");
+   var hars = document.getElementsByClassName("hard");
   var randomIndex;
   var newText;
   var score = 0;
@@ -76,7 +76,12 @@ function clearPlayer() {
     hard: 2
   }
 
-  const currentLevel = levels.medium;
+  // const currentLevel = levels.medium;
+  ease.onclick = levelEasy();
+
+  function levelEasy() {
+    const currentLevel = levels.easy;
+  }
 
 
   function flashLogo() {

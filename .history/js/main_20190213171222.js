@@ -29,7 +29,7 @@ function clearPlayer() {
       generate();
     }, 5000);
     timer();
-    // cancelLevel1();
+    cancelLevel1();
   }
 
   function wordGeneratorLevel2() {

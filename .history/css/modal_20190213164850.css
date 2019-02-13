@@ -11,15 +11,8 @@
   -o-background-size: cover;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
 
-a:hover {
-  color: red;
-  text-decoration: none;
-}
+
 
 
 .modal {
@@ -32,8 +25,9 @@ a:hover {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4);
+  /* background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); */
+  background-color: sandybrown;
 }
 
 /* Modal Content */
@@ -80,7 +74,7 @@ a:hover {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: sandybrown;
+  background-color: #5cb85c;
   color: white;
   text-align: center;
 }
@@ -107,6 +101,6 @@ a:hover {
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: sandybrown;
+  background-color: #5cb85c;
   color: white;
 }

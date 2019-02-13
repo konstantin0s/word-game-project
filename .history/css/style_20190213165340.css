@@ -262,8 +262,7 @@ b {
 
 .gLevel {
   list-style: none;
-  top: -260px;
-  position: relative;
+  top: 20px;
 }
 
 .gLevel li {

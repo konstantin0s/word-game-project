@@ -11,15 +11,8 @@
   -o-background-size: cover;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
 
-a:hover {
-  color: red;
-  text-decoration: none;
-}
+
 
 
 .modal {

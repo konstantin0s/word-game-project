@@ -262,15 +262,13 @@ b {
 
 .gLevel {
   list-style: none;
-  top: -260px;
-  position: relative;
 }
 
 .gLevel li {
     float: left;
     list-style: none;
     text-align: center;
-    background-color: sandybrown;
+    background-color: #000000;
     margin-right: 30px;
     width: 150px;
     line-height: 60px;
@@ -281,7 +279,6 @@ b {
     color: #FFFFFF;
     display: block;
     border-radius: 4px;
-    cursor: pointer;
   }
   
   .gLevel li:hover {
