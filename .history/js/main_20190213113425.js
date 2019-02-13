@@ -131,6 +131,7 @@ function cancelLevel1() {
            clearInterval(timer);
            setInterval(function(){
             wordName.style.backgroundColor = "";
+            corWrong.innerHTML = "";
           }, 1500);
           resetInput();
              flag = true;
@@ -167,7 +168,6 @@ function cancelLevel1() {
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
-  corWrong.innerHTML = "";
   }
 
 

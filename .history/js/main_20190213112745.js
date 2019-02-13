@@ -167,7 +167,6 @@ function cancelLevel1() {
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
-  corWrong.innerHTML = "";
   }
 
 

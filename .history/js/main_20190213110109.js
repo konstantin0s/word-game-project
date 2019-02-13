@@ -1,7 +1,7 @@
 function say_hi() {
-  var name = document.getElementById("name").value;
-  var html = "<b>" + name + "</b> ";
- document.getElementById("output").innerHTML = html;
+  var name = document.getElementById('name').value;
+  var html = '<b>' + name + '</b> ';
+ document.getElementById('output').innerHTML = html;
 }
 
 function clearPlayer() {
@@ -15,7 +15,7 @@ function clearPlayer() {
   var exampleModalCenter = document.getElementById("exampleModalCenter");
   exampleModalCenter.style.visibility = "none";
   var modalContent = document.getElementsByClassName("modal-content");
-  modalContent.style.visibility = "hidden";
+  modalContent.style.visibility = "none";
 }
 
   (function() {
@@ -66,21 +66,20 @@ function cancelLevel1() {
   var timeLeft = document.getElementById("timeLeft");
   var svgLogo = document.getElementById("Layer_1");
    var messagePlayer = document.getElementById("messageP");
-   var corWrong = document.getElementById("corWrong");
   var randomIndex;
   var newText;
   var score = 0;
-  var lives = 5;
+  var lives = 4;
   var seconds = 5;
 
 
   function flashLogo() {
     var interval = window.setInterval(function(){
-      if(svgLogo.display !== "hidden"){
-        svgLogo.style.visibility = "hidden";
+      if(svgLogo.display !== 'hidden'){
+        svgLogo.style.visibility = 'hidden';
     
       }else{
-        svgLogo.style.visibility = "hidden";
+        svgLogo.style.visibility = 'hidden';
       }
   }, 1000);  
   }
@@ -110,13 +109,13 @@ function cancelLevel1() {
     randomDiv.innerHTML = newText;
    }
  
+  //  wordGeneratorLevel1();
   var flag;
   function compareGuess() {
     var searchWord = document.getElementById("inputWord").value;
     var wordName = document.getElementById("wordsDisplay");
     flag = false;          
          if (searchWord == wordName.innerHTML) {
-          corWrong.innerHTML = "Correct!!!"
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
@@ -141,7 +140,6 @@ function cancelLevel1() {
          if (flag == false) {
           lives--;
           freshLives.innerHTML = lives;
-          corWrong.innerHTML = "Wrong!!!"
           resetInput();
          }  
          checkLife();
@@ -167,14 +165,13 @@ function cancelLevel1() {
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
-  corWrong.innerHTML = "";
   }
 
 
   function init() {
     alert("Start Game!");
     wordGeneratorLevel1();
-    lives = 5;
+    lives = 4;
     freshLives.innerHTML = lives;
    }
    

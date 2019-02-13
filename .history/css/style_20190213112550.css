@@ -239,12 +239,10 @@ b {
   left: 750px;
 }
 
-#corWrong {
+.corWrong {
   position: relative;
-  left: 780px;
-  top: 270px;
-  color: black;
-  font: 30px;
+  left: 200px;
+  top: 200px;
 }
 
 /* #modalContainer {

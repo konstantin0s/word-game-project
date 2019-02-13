@@ -234,18 +234,10 @@ b {
 }
 
 #clearPlayer {
-  position: relative;
+  positon: relative;
   top: 20px;
-  left: 750px;
 }
 
-#corWrong {
-  position: relative;
-  left: 780px;
-  top: 270px;
-  color: black;
-  font: 30px;
-}
 
 /* #modalContainer {
 	background-color:rgba(0, 0, 0, 0.3);

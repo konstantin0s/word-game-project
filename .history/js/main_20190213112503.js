@@ -66,7 +66,7 @@ function cancelLevel1() {
   var timeLeft = document.getElementById("timeLeft");
   var svgLogo = document.getElementById("Layer_1");
    var messagePlayer = document.getElementById("messageP");
-   var corWrong = document.getElementById("corWrong");
+   var corWrong = document.getElementsByClassName("corWrong");
   var randomIndex;
   var newText;
   var score = 0;
@@ -167,7 +167,6 @@ function cancelLevel1() {
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
-  corWrong.innerHTML = "";
   }
 
 

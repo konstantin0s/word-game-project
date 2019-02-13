@@ -15,7 +15,7 @@ function clearPlayer() {
   var exampleModalCenter = document.getElementById("exampleModalCenter");
   exampleModalCenter.style.visibility = "none";
   var modalContent = document.getElementsByClassName("modal-content");
-  modalContent.style.visibility = "hidden";
+  modalContent.style.visibility = "none";
 }
 
   (function() {
@@ -66,7 +66,7 @@ function cancelLevel1() {
   var timeLeft = document.getElementById("timeLeft");
   var svgLogo = document.getElementById("Layer_1");
    var messagePlayer = document.getElementById("messageP");
-   var corWrong = document.getElementById("corWrong");
+   var corWrong = document.getElementById("output");
   var randomIndex;
   var newText;
   var score = 0;
@@ -116,7 +116,6 @@ function cancelLevel1() {
     var wordName = document.getElementById("wordsDisplay");
     flag = false;          
          if (searchWord == wordName.innerHTML) {
-          corWrong.innerHTML = "Correct!!!"
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
@@ -141,7 +140,6 @@ function cancelLevel1() {
          if (flag == false) {
           lives--;
           freshLives.innerHTML = lives;
-          corWrong.innerHTML = "Wrong!!!"
           resetInput();
          }  
          checkLife();
@@ -167,7 +165,6 @@ function cancelLevel1() {
 
  function resetInput() {
   document.getElementById("inputWord").value = "";
-  corWrong.innerHTML = "";
   }
 
 

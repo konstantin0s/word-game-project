@@ -241,9 +241,9 @@ b {
 
 #corWrong {
   position: relative;
-  left: 780px;
-  top: 270px;
-  color: black;
+  right: 700px;
+  top: 700px;
+  color: white;
   font: 30px;
 }
 
