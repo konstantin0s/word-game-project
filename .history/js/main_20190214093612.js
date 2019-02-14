@@ -29,18 +29,20 @@ function clearPlayer() {
       generate();
     }, 5000);
     timer();
+    // cancelLevel1();
   }
 
-  var wordGeneratorLevel2 = function() {
+  function wordGeneratorLevel2() {
     setInterval(function(){
-      generate();
-    }, 3000);
+      generateLevel2() 
+    }, 5000);
     timer();
 }
 
 var input = document.getElementById("inputWord");
 input.addEventListener('keyup',function(e){
   if (e.keyCode == 13) {
+  console.log("haha");
 }
 });
 
@@ -66,13 +68,22 @@ input.addEventListener('keyup',function(e){
    var messagePlayer = document.getElementById("messageP");
    var corWrong = document.getElementById("corWrong");
    var dinaSec = document.getElementById("sec");
-   var enemy = document.getElementById("enemyLife");
+   var ease = document.getElementsByClassName("easy");
+   var mediu = document.getElementsByClassName("easy");
+   var hars = document.getElementsByClassName("easy");
   var randomIndex;
   var newText;
   var score = 0;
   var lives = 5;
   var seconds = 5;
-  enemyLife = 10;
+
+  const levels = {
+    easy: 6,
+    medium: 4,
+    hard: 2
+  }
+
+  const currentLevel = levels.medium;
 
 
   function flashLogo() {
@@ -89,10 +100,6 @@ input.addEventListener('keyup',function(e){
   function checkLife() {
     if (lives == 0) {
       createCustomAlert(); // game over
-
-      setInterval(function(){
-          window.location.href = "http://127.0.0.1:5500/index.html";
-      }, 10000);
       score = 0;
       addScore.textContent = "0"
       resetInput();
@@ -119,26 +126,25 @@ input.addEventListener('keyup',function(e){
   function compareGuess() {
     var searchWord = document.getElementById("inputWord").value;
     var wordName = document.getElementById("wordsDisplay");
-    messagePlayer.innerHTML = "Enemy";
     flag = false;          
-         if (searchWord == wordName.innerHTML) {
+         if (searchWord == wordName.innerHTML && seconds > 0) {
           corWrong.innerHTML = "Correct!!!"
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
+          //  if (wordName.css == "yellow") {
+          //    reset score and timer.
+          //  }
+          if (corWrong.innerHTML == "Correct!!!") {
+            dinaSec.innerHTML = seconds;
+            timeLeft.innerHTML = seconds;
+        }
            score++;
-           enemyLife--;
-           enemy.innerHTML = enemyLife;
-           if (enemyLife == 0) {
-            enemy.innerText = "";
-           }
            addScore.textContent = score;
            flag = true;
            if (score >= 10 && score <= 11) {
             var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3');
             audio.play();
              lives++
-            enemy.innerHTML = enemyLife;
-            enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;
             flashLogo();
             messagePlayer.innerHTML = "I'm Outta Here :)";
@@ -161,7 +167,7 @@ input.addEventListener('keyup',function(e){
          }  
          checkLife();
       }
-
+    
       function timer() {
         setInterval(function(){
           seconds--;
@@ -180,9 +186,13 @@ input.addEventListener('keyup',function(e){
            } 
       }, 1000);
       }
-
+      
+      
+var res = false;
  function resetInput() {
+   res = true;
   document.getElementById("inputWord").value = "";
+  // corWrong.innerHTML = "";
   }
 
 
@@ -190,18 +200,10 @@ input.addEventListener('keyup',function(e){
     wordGeneratorLevel1();
     lives = 5;
     freshLives.innerHTML = lives;
-    messagePlayer.innerHTML = "Enemy";
    }
+   
 
  window.onload = init;
-
-   var levels = {
-    easy: 6,
-    medium: 4,
-    hard: 2
-  }
-  var currentLevel = levels.medium;
- 
 
  var ALERT_TITLE = "Game Over!\n Restart?";
 var ALERT_BUTTON_TEXT = "Ok";
@@ -254,7 +256,7 @@ function createCustomAlert(txt) {
 
 function removeCustomAlert() {
   document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
-  window.location.href = "http://127.0.0.1:5500/index.html";
+
    
 }
 function ful(){

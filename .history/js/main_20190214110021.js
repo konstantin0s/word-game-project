@@ -38,9 +38,10 @@ function clearPlayer() {
     timer();
 }
 
-var input = document.getElementById("inputWord");
+var input = document.getElementById("closeBtn");
 input.addEventListener('keyup',function(e){
   if (e.keyCode == 13) {
+
 }
 });
 
@@ -90,9 +91,9 @@ input.addEventListener('keyup',function(e){
     if (lives == 0) {
       createCustomAlert(); // game over
 
-      setInterval(function(){
-          window.location.href = "http://127.0.0.1:5500/index.html";
-      }, 10000);
+      // setInterval(function(){
+      //     window.location.href = "http://127.0.0.1:5500/index.html";
+      // }, 5000);
       score = 0;
       addScore.textContent = "0"
       resetInput();
@@ -254,7 +255,7 @@ function createCustomAlert(txt) {
 
 function removeCustomAlert() {
   document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
-  window.location.href = "http://127.0.0.1:5500/index.html";
+
    
 }
 function ful(){

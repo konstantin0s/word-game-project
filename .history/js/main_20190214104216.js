@@ -89,10 +89,6 @@ input.addEventListener('keyup',function(e){
   function checkLife() {
     if (lives == 0) {
       createCustomAlert(); // game over
-
-      setInterval(function(){
-          window.location.href = "http://127.0.0.1:5500/index.html";
-      }, 10000);
       score = 0;
       addScore.textContent = "0"
       resetInput();
@@ -119,18 +115,13 @@ input.addEventListener('keyup',function(e){
   function compareGuess() {
     var searchWord = document.getElementById("inputWord").value;
     var wordName = document.getElementById("wordsDisplay");
-    messagePlayer.innerHTML = "Enemy";
     flag = false;          
          if (searchWord == wordName.innerHTML) {
           corWrong.innerHTML = "Correct!!!"
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
-           enemyLife--;
-           enemy.innerHTML = enemyLife;
-           if (enemyLife == 0) {
-            enemy.innerText = "";
-           }
+           enemy--;
            addScore.textContent = score;
            flag = true;
            if (score >= 10 && score <= 11) {
@@ -138,7 +129,6 @@ input.addEventListener('keyup',function(e){
             audio.play();
              lives++
             enemy.innerHTML = enemyLife;
-            enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;
             flashLogo();
             messagePlayer.innerHTML = "I'm Outta Here :)";
@@ -190,7 +180,6 @@ input.addEventListener('keyup',function(e){
     wordGeneratorLevel1();
     lives = 5;
     freshLives.innerHTML = lives;
-    messagePlayer.innerHTML = "Enemy";
    }
 
  window.onload = init;
@@ -235,8 +224,8 @@ function createCustomAlert(txt) {
 	msg = alertObj.appendChild(d.createElement("p"));
 	//msg.appendChild(d.createTextNode(txt));
   msg.innerHTML = txt;
-  audio = new Audio('http://www.project818.com/files/music/TI-Justin-Timberlake-Dead-and-Gone.mp3');
-  audio.play();
+  // audio = new Audio('http://www.project818.com/files/music/TI-Justin-Timberlake-Dead-and-Gone.mp3');
+  // audio.play();
 
 	btn = alertObj.appendChild(d.createElement("a"));
 	btn.id = "closeBtn";
@@ -254,7 +243,7 @@ function createCustomAlert(txt) {
 
 function removeCustomAlert() {
   document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
-  window.location.href = "http://127.0.0.1:5500/index.html";
+
    
 }
 function ful(){

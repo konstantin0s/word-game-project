@@ -260,10 +260,6 @@ b {
   font: 30px;
 }
 
-#enemyLife {
-  color: black;
-}
-
 #modalContainer {
 	background-color:rgba(0, 0, 0, 0.3);
 	position:absolute;

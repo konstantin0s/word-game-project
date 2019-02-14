@@ -254,7 +254,7 @@ function createCustomAlert(txt) {
 
 function removeCustomAlert() {
   document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
-  window.location.href = "http://127.0.0.1:5500/index.html";
+
    
 }
 function ful(){
