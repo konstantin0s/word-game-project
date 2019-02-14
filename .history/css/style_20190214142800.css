@@ -3,7 +3,6 @@ body {
   padding: 0;
   z-index: 40;
   overflow-x: hidden;
-  height: 100%;
 }
 
 .container {
@@ -102,11 +101,11 @@ font {
   text-align: center;
 }
 #userDetails {
-  position: absolute;
-  top: 430px;
+  position: relative;
+  top: 230px;
  float: right;
  /* left: 500px; */
- left: 980px;
+ left: 740px;
   color: white;
   background-color: sandybrown;
   width: 300px;
@@ -202,7 +201,7 @@ b {
 @import "compass/css3";
 
 .logo {
-  position: absolute;
+  position: fixed;
   width: 200px;
   height: 164px;
   left: 250px;
@@ -226,8 +225,8 @@ b {
 }
 
 #messageP {
-  position: absolute;
-  top: 360px;
+  position: relative;
+  top: -80px;
   width: 100px;
   left: 280px;
   text-align: center;
@@ -238,9 +237,9 @@ b {
   width: 25%;
   height: 250px;
   color: white;
-  position: absolute;
+  position: relative;
   left: 580px;
-  top: 820px;
+  top: 220px;
   margin: 5px;
   text-align: center;
   margin-bottom: 350px;
@@ -272,14 +271,14 @@ b {
 #enemyLife {
   color: white;
   background-color: sandybrown;
-  position: absolute;
-  top: 0px;
+  position: fixed;
+  top: 600px;
 
 }
  .enemy {
    left: 280px;
-   position: absolute;
-   top:600px;
+   position: fixed;
+   top:130px;
    color: white;
    background-color: sandybrown;
    width: 120px;

@@ -102,11 +102,11 @@ font {
   text-align: center;
 }
 #userDetails {
-  position: absolute;
-  top: 430px;
+  position: relative;
+  top: 230px;
  float: right;
  /* left: 500px; */
- left: 980px;
+ left: 740px;
   color: white;
   background-color: sandybrown;
   width: 300px;
@@ -273,7 +273,7 @@ b {
   color: white;
   background-color: sandybrown;
   position: absolute;
-  top: 0px;
+  top: 60px;
 
 }
  .enemy {

@@ -47,7 +47,8 @@ input.addEventListener('keyup',function(e){
   var wordsLevel1 = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
 "curl", "rate", "busy", "unusual", "extend", "exclusive", "ray", "shy", "wasteful", "unbecoming", "fallacious",
-"toothbrush", "bounce", "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer"
+"toothbrush", "bounce", "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer",
+"thing", "man", "world", "life", "hand", "part", "child", "eye", "woman", "place", "work", "week", "case", "point", "government", "company", "number", "group", "problem", "fact"
      ];
 
      var wordsLevel2 = [
@@ -131,21 +132,14 @@ input.addEventListener('keyup',function(e){
            enemyLife--;
            enemy.innerHTML = enemyLife;
            if (enemyLife == 0) {
-            audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
-            audio.play();
-             setInterval(function(){
-              audio.pause();
-          }, 15000);
-          enemy.innerText = "DeaD";
-        
-          enemy.innerText = "";
+           audioStyle();
+          //  audio.pause();    
            }
            addScore.textContent = score;
            flag = true;
-            if (score >= 12) {
-                audio.pause();
+           if (score == 10) {
+              audio.pause();    //sound 
              lives++
-            enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;
             flashLogo();
             messagePlayer.innerHTML = "I'm Outta Here :)";
@@ -153,7 +147,7 @@ input.addEventListener('keyup',function(e){
            clearInterval(timer);
            setInterval(function(){
             wordName.style.backgroundColor = "";
-          }, 1500);
+          }, 2500);
           resetInput();
              flag = true;
          } else {
@@ -163,11 +157,20 @@ input.addEventListener('keyup',function(e){
          if (flag == false) {
           lives--;
           freshLives.innerHTML = lives;
-          corWrong.innerHTML = "Wrong!!!"
+          corWrong.innerHTML = "Wrong!!!";
           resetInput();
          }  
          checkLife();
       }
+
+      function audioStyle() {
+        audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
+        audio.play();
+        setInterval(function(){
+        audio.pause();
+     }, 10000);
+      }
+      
 
       function timer() {
         setInterval(function(){

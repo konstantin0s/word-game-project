@@ -131,19 +131,17 @@ input.addEventListener('keyup',function(e){
            enemyLife--;
            enemy.innerHTML = enemyLife;
            if (enemyLife == 0) {
-            audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
-            audio.play();
+             audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
+             audio.play();
              setInterval(function(){
-              audio.pause();
+             audio.pause();
           }, 15000);
           enemy.innerText = "DeaD";
-        
-          enemy.innerText = "";
            }
            addScore.textContent = score;
            flag = true;
-            if (score >= 12) {
-                audio.pause();
+           if (score >= 10 && score <= 11) {
+        //sound
              lives++
             enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;

@@ -47,7 +47,8 @@ input.addEventListener('keyup',function(e){
   var wordsLevel1 = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
 "curl", "rate", "busy", "unusual", "extend", "exclusive", "ray", "shy", "wasteful", "unbecoming", "fallacious",
-"toothbrush", "bounce", "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer"
+"toothbrush", "bounce", "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer",
+"thing", "man", "world", "life", "hand", "part", "child", "eye", "woman", "place", "work", "week", "case", "point", "government", "company", "number", "group", "problem", "fact"
      ];
 
      var wordsLevel2 = [
@@ -130,21 +131,19 @@ input.addEventListener('keyup',function(e){
            audio.play();
            enemyLife--;
            enemy.innerHTML = enemyLife;
+            enemy.innerText = "";
+           }
            if (enemyLife == 0) {
             audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
             audio.play();
-             setInterval(function(){
-              audio.pause();
-          }, 15000);
-          enemy.innerText = "DeaD";
-        
-          enemy.innerText = "";
-           }
+            setInterval(function(){
+            audio.pause();
+         }, 15000);
            addScore.textContent = score;
            flag = true;
-            if (score >= 12) {
-                audio.pause();
+           if (score >= 10 && score <= 11) {
              lives++
+            enemy.innerHTML = enemyLife;
             enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;
             flashLogo();

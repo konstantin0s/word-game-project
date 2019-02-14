@@ -47,7 +47,8 @@ input.addEventListener('keyup',function(e){
   var wordsLevel1 = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
 "curl", "rate", "busy", "unusual", "extend", "exclusive", "ray", "shy", "wasteful", "unbecoming", "fallacious",
-"toothbrush", "bounce", "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer"
+"toothbrush", "bounce", "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer",
+"thing", "man", "world", "life", "hand", "part", "child", "eye", "woman", "place", "work", "week", "case", "point", "government", "company", "number", "group", "problem", "fact"
      ];
 
      var wordsLevel2 = [
@@ -131,20 +132,19 @@ input.addEventListener('keyup',function(e){
            enemyLife--;
            enemy.innerHTML = enemyLife;
            if (enemyLife == 0) {
-            audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
-            audio.play();
+             audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
+             audio.play();
              setInterval(function(){
-              audio.pause();
+             audio.stop();
           }, 15000);
-          enemy.innerText = "DeaD";
-        
-          enemy.innerText = "";
+            enemy.innerText = "";
            }
            addScore.textContent = score;
            flag = true;
-            if (score >= 12) {
-                audio.pause();
+           if (score >= 10 && score <= 11) {
+             audio.pause();    //sound 
              lives++
+            enemy.innerHTML = enemyLife;
             enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;
             flashLogo();
@@ -153,7 +153,7 @@ input.addEventListener('keyup',function(e){
            clearInterval(timer);
            setInterval(function(){
             wordName.style.backgroundColor = "";
-          }, 1500);
+          }, 2500);
           resetInput();
              flag = true;
          } else {
@@ -210,60 +210,60 @@ input.addEventListener('keyup',function(e){
   var currentLevel = levels.medium;
  
 
- var ALERT_TITLE = "Game Over!\n Restart?";
-var ALERT_BUTTON_TEXT = "Ok";
+//  var ALERT_TITLE = "Game Over!\n Restart?";
+// var ALERT_BUTTON_TEXT = "Ok";
 
-if(document.getElementById) {
-	window.alert = function(txt) {
-    createCustomAlert(txt);
-	} 
-}
+// if(document.getElementById) {
+// 	window.alert = function(txt) {
+//     createCustomAlert(txt);
+// 	} 
+// }
 
-function createCustomAlert(txt) {
-	d = document;
+// function createCustomAlert(txt) {
+// 	d = document;
 
-  if(d.getElementById("modalContainer"))
-   return;
+//   if(d.getElementById("modalContainer"))
+//    return;
 
-	mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
-	mObj.id = "modalContainer";
-	mObj.style.height = d.documentElement.scrollHeight + "px";
+// 	mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
+// 	mObj.id = "modalContainer";
+// 	mObj.style.height = d.documentElement.scrollHeight + "px";
 	
-	alertObj = mObj.appendChild(d.createElement("div"));
-	alertObj.id = "alertBox";
-	if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
-	alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
-  alertObj.style.visiblity="visible";
-  alertObj.style.left="480px";
+// 	alertObj = mObj.appendChild(d.createElement("div"));
+// 	alertObj.id = "alertBox";
+// 	if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
+// 	alertObj.style.left = (d.documentElement.scrollWidth - alertObj.offsetWidth)/2 + "px";
+//   alertObj.style.visiblity="visible";
+//   alertObj.style.left="480px";
 
-	h1 = alertObj.appendChild(d.createElement("h1"));
-	h1.appendChild(d.createTextNode(ALERT_TITLE));
+// 	h1 = alertObj.appendChild(d.createElement("h1"));
+// 	h1.appendChild(d.createTextNode(ALERT_TITLE));
 
-	msg = alertObj.appendChild(d.createElement("p"));
-	//msg.appendChild(d.createTextNode(txt));
-  msg.innerHTML = txt;
-  audio = new Audio('http://www.project818.com/files/music/TI-Justin-Timberlake-Dead-and-Gone.mp3');
-  audio.play();
+// 	msg = alertObj.appendChild(d.createElement("p"));
+// 	//msg.appendChild(d.createTextNode(txt));
+//   msg.innerHTML = txt;
+//   audio = new Audio('http://www.project818.com/files/music/TI-Justin-Timberlake-Dead-and-Gone.mp3');
+//   audio.play();
 
-	btn = alertObj.appendChild(d.createElement("a"));
-	btn.id = "closeBtn";
-	btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
-	btn.href = "#";
-	btn.focus();
-  btn.onclick = function() { removeCustomAlert();
-      audio.pause();
-      window.location.href = "http://127.0.0.1:5500/index.html";
-    return false; }
+// 	btn = alertObj.appendChild(d.createElement("a"));
+// 	btn.id = "closeBtn";
+// 	btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+// 	btn.href = "#";
+// 	btn.focus();
+//   btn.onclick = function() { removeCustomAlert();
+//       audio.pause();
+//       window.location.href = "http://127.0.0.1:5500/index.html";
+//     return false; }
 
-	alertObj.style.display = "block";
+// 	alertObj.style.display = "block";
 	
-}
+// }
 
-function removeCustomAlert() {
-  document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
-  window.location.href = "http://127.0.0.1:5500/index.html";
+// function removeCustomAlert() {
+//   document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
+//   window.location.href = "http://127.0.0.1:5500/index.html";
    
-}
-function ful(){
-alert('Game Over!!!');
-}
+// }
+// function ful(){
+// alert('Game Over!!!');
+// }

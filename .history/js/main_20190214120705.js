@@ -27,7 +27,7 @@ function clearPlayer() {
   var wordGeneratorLevel1 = function() {
     setInterval(function(){
       generate();
-    }, 5000);
+    }, 4000);
     timer();
   }
 
@@ -47,7 +47,8 @@ input.addEventListener('keyup',function(e){
   var wordsLevel1 = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
 "curl", "rate", "busy", "unusual", "extend", "exclusive", "ray", "shy", "wasteful", "unbecoming", "fallacious",
-"toothbrush", "bounce", "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer"
+"toothbrush", "bounce", "brightwork", "verkrampte", "protectrix", "nudibranch", "grandchild", "newfangled", "flugelhorn", "mythologer",
+"thing", "man", "world", "life", "hand", "part", "child", "eye", "woman", "place", "work", "week", "case", "point", "government", "company", "number", "group", "problem", "fact"
      ];
 
      var wordsLevel2 = [
@@ -131,20 +132,19 @@ input.addEventListener('keyup',function(e){
            enemyLife--;
            enemy.innerHTML = enemyLife;
            if (enemyLife == 0) {
-            audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
-            audio.play();
+             audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
+             audio.play();
              setInterval(function(){
-              audio.pause();
+             audio.pause();
           }, 15000);
-          enemy.innerText = "DeaD";
-        
-          enemy.innerText = "";
+            enemy.innerText = "";
            }
            addScore.textContent = score;
            flag = true;
-            if (score >= 12) {
-                audio.pause();
+           if (score >= 10 && score <= 11) {
+        //sound
              lives++
+            enemy.innerHTML = enemyLife;
             enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;
             flashLogo();
@@ -204,7 +204,7 @@ input.addEventListener('keyup',function(e){
 
    var levels = {
     easy: 6,
-    medium: 4,
+    medium: 3,
     hard: 2
   }
   var currentLevel = levels.medium;

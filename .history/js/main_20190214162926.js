@@ -142,8 +142,10 @@ input.addEventListener('keyup',function(e){
            }
            addScore.textContent = score;
            flag = true;
-            if (score >= 12) {
+            if (score >= 10) {
+              setInterval(function(){
                 audio.pause();
+            }, 5000);
              lives++
             enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;
