@@ -131,11 +131,11 @@ input.addEventListener('keyup',function(e){
            enemyLife--;
            enemy.innerHTML = enemyLife;
            if (enemyLife == 0) {
-             audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
+             audio = new Audio('https://archive.org/details/TheGodfatherORIGINALSOUNDTRACK');
              audio.play();
              setInterval(function(){
              audio.pause();
-          }, 15000);
+          }, 10000);
             enemy.innerText = "";
            }
            addScore.textContent = score;

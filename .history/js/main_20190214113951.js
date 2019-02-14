@@ -131,11 +131,8 @@ input.addEventListener('keyup',function(e){
            enemyLife--;
            enemy.innerHTML = enemyLife;
            if (enemyLife == 0) {
-             audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
-             audio.play();
-             setInterval(function(){
-             audio.pause();
-          }, 15000);
+             audio = new Audio('http://a.tumblr.com/tumblr_m5dv195x2R1r4f81no1.mp3');
+            // audio.pause();
             enemy.innerText = "";
            }
            addScore.textContent = score;

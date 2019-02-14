@@ -135,7 +135,7 @@ input.addEventListener('keyup',function(e){
              audio.play();
              setInterval(function(){
              audio.pause();
-          }, 15000);
+          }, 10000);
             enemy.innerText = "";
            }
            addScore.textContent = score;
