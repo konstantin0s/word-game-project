@@ -144,9 +144,6 @@ input.addEventListener('keyup',function(e){
           }, 15000);
           enemy.innerText = "DeaD";
            }
-           if (score >= 10) {
-            enemy.innerText = "DeaD";
-           }
            addScore.textContent = score;
            flag = true;
             if (score >= 12) {

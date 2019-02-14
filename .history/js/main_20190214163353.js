@@ -79,16 +79,20 @@ input.addEventListener('keyup',function(e){
     var interval = window.setInterval(function(){
       if(svgLogo.display !== "hidden"){
         svgLogo.style.visibility = "hidden";
-     } else{
+    
+      }else{
         svgLogo.style.visibility = "hidden";
       }
-    }, 1000);  
+  }, 1000);  
   }
 
   function checkLife() {
     if (lives == 0) {
       createCustomAlert(); // game over
-      redirectPage();
+
+      setInterval(function(){
+          window.location.href = "http://127.0.0.1:5500/index.html";
+      }, 10000);
       score = 0;
       addScore.textContent = "0"
       resetInput();
@@ -97,16 +101,6 @@ input.addEventListener('keyup',function(e){
     }
   }
 
-  function freshLives() {
-    lives = 5;
-    freshLives.innerHTML = lives;
-  }
-
-  function redirectPage() {
-  setInterval(function(){
-    window.location.href = "http://127.0.0.1:5500/index.html";
-}, 10000);
-  }
 
   function generate() {
    randomIndex = Math.ceil((Math.random() * wordsLevel1.length - 1));
@@ -122,9 +116,9 @@ input.addEventListener('keyup',function(e){
    }
  
   var flag;
+  var searchWord = document.getElementById("inputWord").value;
+  var wordName = document.getElementById("wordsDisplay");
   function compareGuess() {
-    var searchWord = document.getElementById("inputWord").value;
-    var wordName = document.getElementById("wordsDisplay");
     messagePlayer.innerHTML = "Enemy";
     flag = false;          
          if (searchWord == wordName.innerHTML) {
@@ -143,9 +137,6 @@ input.addEventListener('keyup',function(e){
               audio.pause();
           }, 15000);
           enemy.innerText = "DeaD";
-           }
-           if (score >= 10) {
-            enemy.innerText = "DeaD";
            }
            addScore.textContent = score;
            flag = true;

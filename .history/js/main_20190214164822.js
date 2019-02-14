@@ -38,11 +38,6 @@ function clearPlayer() {
     timer();
 }
 
-var input = document.getElementById("inputWord");
-input.addEventListener('keyup',function(e){
-  if (e.keyCode == 13) {
-}
-});
 
   var wordsLevel1 = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
@@ -97,11 +92,6 @@ input.addEventListener('keyup',function(e){
     }
   }
 
-  function freshLives() {
-    lives = 5;
-    freshLives.innerHTML = lives;
-  }
-
   function redirectPage() {
   setInterval(function(){
     window.location.href = "http://127.0.0.1:5500/index.html";
@@ -120,6 +110,12 @@ input.addEventListener('keyup',function(e){
     newText = wordsLevel2[randomIndex];
     randomDiv.innerHTML = newText;
    }
+
+   var input = document.getElementById("inputWord");
+   input.addEventListener('keyup',function(e){
+   if (e.keyCode == 13) {
+}
+});
  
   var flag;
   function compareGuess() {
@@ -143,9 +139,6 @@ input.addEventListener('keyup',function(e){
               audio.pause();
           }, 15000);
           enemy.innerText = "DeaD";
-           }
-           if (score >= 10) {
-            enemy.innerText = "DeaD";
            }
            addScore.textContent = score;
            flag = true;

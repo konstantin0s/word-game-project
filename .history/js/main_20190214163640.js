@@ -92,8 +92,7 @@ input.addEventListener('keyup',function(e){
       score = 0;
       addScore.textContent = "0"
       resetInput();
-      lives = 5;
-      freshLives.innerHTML = lives;
+      freshLives();
     }
   }
 
@@ -143,9 +142,6 @@ input.addEventListener('keyup',function(e){
               audio.pause();
           }, 15000);
           enemy.innerText = "DeaD";
-           }
-           if (score >= 10) {
-            enemy.innerText = "DeaD";
            }
            addScore.textContent = score;
            flag = true;

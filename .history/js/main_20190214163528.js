@@ -97,11 +97,6 @@ input.addEventListener('keyup',function(e){
     }
   }
 
-  function freshLives() {
-    lives = 5;
-    freshLives.innerHTML = lives;
-  }
-
   function redirectPage() {
   setInterval(function(){
     window.location.href = "http://127.0.0.1:5500/index.html";
@@ -143,9 +138,6 @@ input.addEventListener('keyup',function(e){
               audio.pause();
           }, 15000);
           enemy.innerText = "DeaD";
-           }
-           if (score >= 10) {
-            enemy.innerText = "DeaD";
            }
            addScore.textContent = score;
            flag = true;

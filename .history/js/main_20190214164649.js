@@ -38,11 +38,6 @@ function clearPlayer() {
     timer();
 }
 
-var input = document.getElementById("inputWord");
-input.addEventListener('keyup',function(e){
-  if (e.keyCode == 13) {
-}
-});
 
   var wordsLevel1 = [
     "clever", "amongst", "implementing", "intelectual", "sensual", "amazing", "beautify", "project", "tall",
@@ -97,11 +92,6 @@ input.addEventListener('keyup',function(e){
     }
   }
 
-  function freshLives() {
-    lives = 5;
-    freshLives.innerHTML = lives;
-  }
-
   function redirectPage() {
   setInterval(function(){
     window.location.href = "http://127.0.0.1:5500/index.html";
@@ -120,7 +110,14 @@ input.addEventListener('keyup',function(e){
     newText = wordsLevel2[randomIndex];
     randomDiv.innerHTML = newText;
    }
- 
+
+   var input = document.getElementById("inputWord");
+   input.addEventListener('keyup',function(e){
+     if (e.keyCode == 13) {
+   }
+  });
+
+
   var flag;
   function compareGuess() {
     var searchWord = document.getElementById("inputWord").value;
@@ -132,27 +129,25 @@ input.addEventListener('keyup',function(e){
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
            score++;
+        
            var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3');
            audio.play();
            enemyLife--;
            enemy.innerHTML = enemyLife;
-           if (enemyLife == 0) {
+         if (enemyLife == 0) {
             audio = new Audio('http://arbproductions.ca/mp3/juliuslarosa/juliuslarosa-ehcumpari.mp3');
             audio.play();
-             setInterval(function(){
-              audio.pause();
+            setInterval(function(){
+            audio.pause();
           }, 15000);
-          enemy.innerText = "DeaD";
-           }
-           if (score >= 10) {
-            enemy.innerText = "DeaD";
+             enemy.innerText = "DeaD";
            }
            addScore.textContent = score;
            flag = true;
-            if (score >= 12) {
-                audio.pause();
+         if (score >= 12) {
+             audio.pause();
              lives++
-            enemy.innerText = "DeaD";
+             enemy.innerText = "DeaD";
              freshLives.innerHTML = lives;
             flashLogo();
             messagePlayer.innerHTML = "I'm Outta Here :)";
