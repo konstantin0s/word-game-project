@@ -131,7 +131,6 @@ input.addEventListener('keyup',function(e){
            enemyLife--;
            enemy.innerHTML = enemyLife;
            if (enemyLife == 0) {
-            audio.pause();
             enemy.innerText = "";
            }
            addScore.textContent = score;

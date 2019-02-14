@@ -149,13 +149,6 @@ font {
   left: 330px;
   color: white;
   background-color: sandybrown;
-  margin: 5px;
-}
-
-.type {
-  width: 60%;
-  text-align: center;
-  left: 374px;
 }
 
 b {
@@ -226,10 +219,9 @@ b {
 
 #messageP {
   position: relative;
-  top: -80px;
+  top: -50px;
   width: 100px;
-  left: 280px;
-  text-align: center;
+  left: 500px;
 }
 
 .instructions {
@@ -269,19 +261,12 @@ b {
 }
 
 #enemyLife {
-  color: white;
-  background-color: sandybrown;
-
+  color: black;
 }
  .enemy {
-   left: 280px;
+   left: 350px;
    position: relative;
-   top:130px;
-   color: white;
-   background-color: sandybrown;
-   width: 120px;
-   text-align: center;
-   border-radius: 5px;
+   top:100px;
  }
 
 #modalContainer {
