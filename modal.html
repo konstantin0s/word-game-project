@@ -22,6 +22,17 @@
 </head>
 
 <body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Speed Word Game</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+      </div>
+    </div>
+  </nav
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
@@ -41,7 +52,7 @@
 <button type="button" id="clearPlayer" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
     Enter Your Name
   </button>
-  
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -60,22 +71,23 @@
     </div>
   </div>
 <h2 id="user">
-  Player: 
+  Player:
 </h2>
- 
+
 <div id="output"></div>
 
   <!-- Page Content -->
   <section>
     <div class="container">
-      <div class="row">
+      <div class="col">
         <div class="col-lg-6">
-          <h1 class="mt-5">Speed Word Game</h1>
-          <p class="type">Type The Word Within: 
-            <span id="sec"></span>
-            Seconds</p>
+
+          <p class="type">Type The Word Within:
+          </p>
+              <span id="sec"></span>
+            <!-- <p class="secds">s</p> -->
           <div id="wordsDisplay">
-           
+
           </div>
           <div id="time">
            <p>Time left:</p> <span id="timeLeft"></span>
@@ -96,10 +108,11 @@
   <div id="corWrong"></div>
 
    <p id="messageP"></p>
+     <p class="plife">Enemy's Life left:</p>
    <div class="enemy">
-    Life left: <span id="enemyLife">10</span>
+ <span id="enemyLife">10</span>
    </div>
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   width="612px" height="502.174px" viewBox="0 65.326 612 502.174" enable-background="new 0 65.326 612 502.174"
   xml:space="preserve" class="logo">
 
@@ -122,8 +135,8 @@
  C434.693,207.929,439.613,203.01,445.731,203.01z"/>
 <filter id="pictureFilter" >
  <feGaussianBlur stdDeviation="15" />
-</filter>
-</svg>
+</filter> -->
+<!-- </svg> -->
 
 
 <div class="instructions">

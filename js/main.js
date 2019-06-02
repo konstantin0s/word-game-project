@@ -23,7 +23,7 @@ function clearPlayer() {
       clearPlayer();
     }, 10000);
 }());
- 
+
   var wordGeneratorLevel1 = function() {
     setInterval(function(){
       generate();
@@ -56,8 +56,8 @@ input.addEventListener('keyup',function(e){
      "pluperfect", "jellygraph", "quickthorn", "rottweiler", "technician", "cowpuncher", "middlebrow",
      "jackhammer", "triphthong", "wunderkind", "dazzlement", "jabberwock", "witchcraft","pawnbroker", "thumbprint", "motorcycle"
        ];
-       
-  
+
+
   var randomDiv = document.getElementById("wordsDisplay");
   var addScore = document.getElementById("score");
   var freshLives = document.getElementById("lives");
@@ -82,7 +82,7 @@ input.addEventListener('keyup',function(e){
      } else{
         svgLogo.style.visibility = "hidden";
       }
-    }, 1000);  
+    }, 1000);
   }
 
   function checkLife() {
@@ -120,13 +120,13 @@ input.addEventListener('keyup',function(e){
     newText = wordsLevel2[randomIndex];
     randomDiv.innerHTML = newText;
    }
- 
+
   var flag;
   function compareGuess() {
     var searchWord = document.getElementById("inputWord").value;
     var wordName = document.getElementById("wordsDisplay");
     messagePlayer.innerHTML = "Enemy";
-    flag = false;          
+    flag = false;
          if (searchWord == wordName.innerHTML) {
           corWrong.innerHTML = "Correct!!!"
           wordName.style.height = "40px";
@@ -166,13 +166,13 @@ input.addEventListener('keyup',function(e){
          } else {
            wordName.style.backgroundColor = "";
          }
-          
+
          if (flag == false) {
           lives--;
           freshLives.innerHTML = lives;
           corWrong.innerHTML = "Wrong!!!"
           resetInput();
-         }  
+         }
          checkLife();
       }
 
@@ -186,12 +186,12 @@ input.addEventListener('keyup',function(e){
           }
            if(seconds == 0) {
             freshLives.innerHTML = lives;
-            seconds = currentLevel + 1; 
+            seconds = currentLevel + 1;
             dinaSec.innerHTML = seconds;
             timeLeft.innerHTML = seconds;
             checkLife();
             flag = false;
-           } 
+           }
       }, 1000);
       }
 
@@ -215,7 +215,7 @@ input.addEventListener('keyup',function(e){
     hard: 2
   }
   var currentLevel = levels.medium;
- 
+
 
  var ALERT_TITLE = "Game Over!\n Restart?";
 var ALERT_BUTTON_TEXT = "Ok";
@@ -223,7 +223,7 @@ var ALERT_BUTTON_TEXT = "Ok";
 if(document.getElementById) {
 	window.alert = function(txt) {
     createCustomAlert(txt);
-	} 
+	}
 }
 
 function createCustomAlert(txt) {
@@ -235,7 +235,7 @@ function createCustomAlert(txt) {
 	mObj = d.getElementsByTagName("body")[0].appendChild(d.createElement("div"));
 	mObj.id = "modalContainer";
 	mObj.style.height = d.documentElement.scrollHeight + "px";
-	
+
 	alertObj = mObj.appendChild(d.createElement("div"));
 	alertObj.id = "alertBox";
 	if(d.all && !window.opera) alertObj.style.top = document.documentElement.scrollTop + "px";
@@ -263,13 +263,13 @@ function createCustomAlert(txt) {
     return false; }
 
 	alertObj.style.display = "block";
-	
+
 }
 
 function removeCustomAlert() {
   document.getElementsByTagName("body")[0].removeChild(document.getElementById("modalContainer"));
   window.location.href = "http://127.0.0.1:5500/index.html";
-   
+
 }
 function ful(){
 alert('Game Over!!!');
