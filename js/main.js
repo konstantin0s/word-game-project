@@ -259,7 +259,7 @@ function createCustomAlert(txt) {
 	btn.focus();
   btn.onclick = function() { removeCustomAlert();
       audio.pause();
-      window.location.href = "http://127.0.0.1:5500/index.html";
+      window.location.href = "https://konstantin0s.github.io/word-game-project";
     return false; }
 
 	alertObj.style.display = "block";
