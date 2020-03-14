@@ -121,3 +121,8 @@ a:hover {
   background-color: sandybrown;
   color: white;
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}

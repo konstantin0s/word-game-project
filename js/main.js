@@ -18,11 +18,11 @@ function clearPlayer() {
   modalContent.style.visibility = "hidden";
 }
 
-  (function() {
-    setInterval(function(){
-      clearPlayer();
-    }, 10000);
-}());
+//   (function() {
+//     setInterval(function(){
+//       clearPlayer();
+//     }, 10000);
+// }());
 
   var wordGeneratorLevel1 = function() {
     setInterval(function(){
@@ -128,6 +128,7 @@ input.addEventListener('keyup',function(e){
     messagePlayer.innerHTML = "Enemy";
     flag = false;
          if (searchWord == wordName.innerHTML) {
+          corWrong.style.opacity = '1';
           corWrong.innerHTML = "Correct!!!"
           wordName.style.height = "40px";
            wordName.style.backgroundColor = "yellow";
@@ -168,6 +169,7 @@ input.addEventListener('keyup',function(e){
          }
 
          if (flag == false) {
+          corWrong.style.opacity = '1';
           lives--;
           freshLives.innerHTML = lives;
           corWrong.innerHTML = "Wrong!!!"
@@ -178,6 +180,7 @@ input.addEventListener('keyup',function(e){
 
       function timer() {
         setInterval(function(){
+        
           seconds--;
           dinaSec.innerHTML = seconds;
           timeLeft.innerHTML = seconds;
@@ -201,6 +204,12 @@ input.addEventListener('keyup',function(e){
 
 
   function init() {
+    if (corWrong.innerText === '') {
+      console.log('change style');
+      corWrong.style.opacity = '0';
+    } else {
+      corWrong.style.opacity = '1';
+    }
     wordGeneratorLevel1();
     lives = 5;
     freshLives.innerHTML = lives;
